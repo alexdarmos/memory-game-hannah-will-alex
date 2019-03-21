@@ -14,10 +14,6 @@ function setTime() {
     if (totalSeconds === 59) {
         totalMinutes += 1;
         totalSeconds = 0;
-
     }
 };
-
-
-
 })

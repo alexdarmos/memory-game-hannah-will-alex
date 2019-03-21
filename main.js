@@ -32,4 +32,4 @@ $('#flipto').on("click", function(event) {
     $(".cube").removeClass("flip-to-bottom").addClass("flip-to-top");
     $(this).data("face", "bottom").text("Flip: to bottom");
   }
-}); 
+});

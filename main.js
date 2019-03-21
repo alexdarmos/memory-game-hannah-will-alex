@@ -1,23 +1,3 @@
-
-//     function play(){
-//         var audio = document.getElementById("audio");
-//         audio.play();
-
-//         // var audio2 = document.getElementById("audio-2");
-//         // audio2.play();
-       
-//                   }
-
-
-// $(() => {
-//     $('.flip-card').click(function() {
-//         $(this).toggleClass('active');
-//     });
-
-
-// });
-
-
 //document ready jquery
 $(() => {
     $('.flip-card').click(function() {
@@ -49,6 +29,10 @@ $(() => {
         // audio2.play();
     
         }
+
+
+
+
     // Possible implementation for button flipping - Still requires CSS
     // $('#flipto').on("click", function(event) {
     //   event.preventDefault();

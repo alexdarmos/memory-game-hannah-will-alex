@@ -1,6 +1,19 @@
 //document ready jquery
 $(() => {
 
+    $(`.flip-card-inner`).on(`click`, (e) => {
+        var audio = document.getElementById("audio");
+        audio.play();
+    });
+
+    // function play(){
+    //     // var audio = document.getElementById("audio");
+    //     // audio.play();
+
+    //     // var audio2 = document.getElementById("audio-2");
+    //     // audio2.play();
+    //     }
+
     let totalSeconds = 0;
     let totalMinutes =0;
     let interval;
@@ -42,14 +55,7 @@ $(() => {
         $(this).toggleClass('active');
     });
  
-    function play(){
-        var audio = document.getElementById("audio");
-        audio.play();
-
-        // var audio2 = document.getElementById("audio-2");
-        // audio2.play();
     
-        }
     // Possible implementation for button flipping - Still requires CSS
     // $('#flipto').on("click", function(event) {
     //   event.preventDefault();

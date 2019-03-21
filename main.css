@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: starjhol;
+    color: rgb(233, 210, 3);
     
     
     
@@ -38,6 +39,13 @@ h1 {
     font-size: 60px;
 }
 
+h2 {
+    background-color: black;
+    font-size: 30px;
+    text-align: center;
+    align-content: center;
+}
+
 
 .flip-card {
     background-color: transparent;
@@ -68,8 +76,10 @@ h1 {
   }
   
   .flip-card-front {
-    background-color: #bbb;
-    color: black;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 2;
   }
   

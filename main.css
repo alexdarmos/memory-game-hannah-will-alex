@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    font-family: starjhol;
+    color: rgb(233, 210, 3);
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
+}
+
+@font-face {
+    font-family: "Starjhol";
+    src: url(Starjhol.ttf) format("truetype");
+}
+
+.main-container {
+
+
+}
+
+.content-container {
+
+
+}
+
+.Game-title {
+    background-color: black;
+
+}
+
+h1 {
+    color: white;
+    font-size: 60px;
+}
+
+h2 {
+    background-color: black;
+    font-size: 30px;
+    text-align: center;
+    align-content: center;
+}
+
+.card {
+  color: red;
+  background-color: black;
+}
+
+.Start {
+  color: red;
+  background-color: black;
+}
+
+.Reset {
+  color: red;
+  background-color: black;
+}

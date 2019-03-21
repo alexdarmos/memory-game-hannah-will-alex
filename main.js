@@ -1,6 +1,5 @@
 //document ready jquery
 $(() => {
-<<<<<<< HEAD
     $('.flip-card').click(function() {
         $(this).toggleClass('active');
     });
@@ -48,7 +47,6 @@ $(() => {
     //     $(this).data("face", "bottom").text("Flip: to bottom");
     //   }
   
-=======
 
 let totalSeconds = 0;
 let totalMinutes =0;
@@ -66,4 +64,3 @@ function setTime() {
     }
 };
 })
->>>>>>> cda98f8d9984fc3d3025928b2d74d8b7b80034c5

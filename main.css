@@ -23,23 +23,38 @@ body {
 }
 
 .main-container {
-
+  /* display: flex;  */
+  /* flex-direction: row; */
 
 }
 
 .content-container {
-
+  /* display: flex; */
+  /* flex-direction: row; */
 
 }
 
+.cards {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.title {
+  background-color: black; 
+}
 .Game-title {
-    background-color: black;
+    
+    text-align: center;
+    align-items: center;
 
 }
 
 h1 {
     color: white;
     font-size: 60px;
+    text-align: center;
+    align-items: center; 
 }
 
 h2 {
@@ -49,20 +64,6 @@ h2 {
     align-content: center;
 }
 
-.card {
-  color: red;
-  background-color: black;
-}
-
-.Start {
-  color: red;
-  background-color: black;
-}
-
-.Reset {
-  color: red;
-  background-color: black;
-}
 
 .flip-card {
     background-color: transparent;
@@ -109,12 +110,3 @@ h2 {
 
 
 
-.card {
-
-
-}
-
-.row {
-
-
-}

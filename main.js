@@ -1,7 +1,8 @@
 //document ready jquery
 $(() => {
-    $('.flip-card').click(function() {
-        $(this).toggleClass('active');
+    $(`.flip-card-inner`).on(`click`, (e) => {
+        var audio = document.getElementById("audio");
+        audio.play();
     });
 
     let totalSeconds = 0;

@@ -23,6 +23,7 @@ $(() => {
         domTimer();  
     };
 
+    //works on dummy cards-currently not in html
     function compareCards(e) {
         //track number of clicks
         ++clickCount;
@@ -71,6 +72,7 @@ $(() => {
 
     });
 
+    
     $(`.flip-card`).on(`click`, (e) => {
         //compare cards on click
         compareCards(e);

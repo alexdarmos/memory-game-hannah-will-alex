@@ -20,6 +20,7 @@ body {
 @font-face {
     font-family: "Starjhol";
     src: url(Starjhol.ttf) format("truetype");
+    
 }
 
 .main-container {
@@ -40,6 +41,11 @@ body {
 h1 {
     color: white;
     font-size: 60px;
+}
+
+
+.timer {
+    
 }
 
 h2 {

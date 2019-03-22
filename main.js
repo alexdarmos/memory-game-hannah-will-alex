@@ -1,8 +1,11 @@
 //document ready jquery
 $(() => {
-    $(`.flip-card-inner`).on(`click`, (e) => {
+    
+        $(`.flip-card-inner`).on(`click`, (e) => {
         var audio = document.getElementById("audio");
         audio.play();
+
+        
     });
 
     let totalSeconds = 0;
@@ -20,16 +23,19 @@ $(() => {
             totalSeconds = 0;
         }
     };
+
+    $('.flip-card').click(function() {
+        $(this).toggleClass('active');
+    });
+
     });
     
-    function play(){
-        var audio = document.getElementById("audio");
-        audio.play();
+    
 
         // var audio2 = document.getElementById("audio-2");
         // audio2.play();
     
-        }
+        
 
 
 

@@ -23,15 +23,12 @@ body {
     
 }
 
-.main-container {
-
-
-}
-
-.content-container {
-
+.card-container {
+    
+    
 
 }
+
 
 .Game-title {
     background-color: black;
@@ -102,11 +99,8 @@ h2 {
 
 
 .card {
+    
 
 
 }
 
-.row {
-
-
-}

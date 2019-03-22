@@ -20,8 +20,10 @@ body {
 @font-face {
     font-family: "Starjhol";
     src: url(Starjhol.ttf) format("truetype");
+    
 }
 
+<<<<<<< HEAD
 .main-container {
   /* display: flex;  */
 
@@ -32,6 +34,14 @@ body {
   /* display: flex; */
 
 }
+=======
+.card-container {
+    
+    
+
+}
+
+>>>>>>> hannah
 
 .Game-title {
     background-color: black;
@@ -42,6 +52,11 @@ h1 {
     color: white;
     font-size: 60px;
     /* margin: 0, auto; */
+}
+
+
+.timer {
+    
 }
 
 h2 {
@@ -98,11 +113,8 @@ h2 {
 
 
 .card {
+    
 
 
 }
 
-.row {
-
-
-}

@@ -1,5 +1,16 @@
 //document ready jquery
 $(() => {
+<<<<<<< HEAD
+=======
+    
+        $(`.flip-card-inner`).on(`click`, (e) => {
+        var audio = document.getElementById("audio");
+        audio.play();
+
+        
+    });
+
+>>>>>>> hannah
     let totalSeconds = 0;
     let totalMinutes =0;
     let interval;
@@ -23,6 +34,7 @@ $(() => {
         domTimer();  
     };
 
+<<<<<<< HEAD
     //works on dummy cards-currently not in html
     function compareCards(e) {
         //track number of clicks
@@ -69,10 +81,16 @@ $(() => {
         totalMinutes = 0; 
         //reset timer in dom
         domTimer();  
+=======
+    $('.flip-card').click(function() {
+        $(this).toggleClass('active');
+    });
+>>>>>>> hannah
 
     });
 
     
+<<<<<<< HEAD
     $(`.flip-card`).on(`click`, (e) => {
         //compare cards on click
         compareCards(e);
@@ -84,6 +102,16 @@ $(() => {
     // function play(){
     //     // var audio = document.getElementById("audio");
     //     // audio.play();
+=======
+    
+
+        // var audio2 = document.getElementById("audio-2");
+        // audio2.play();
+    
+        
+
+
+>>>>>>> hannah
 
     //     // var audio2 = document.getElementById("audio-2");
     //     // audio2.play();

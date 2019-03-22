@@ -34,6 +34,7 @@ body {
 
 }
 
+/* center and arrange cards */
 .cards {
   display: flex;
   flex-direction: row;
@@ -41,13 +42,37 @@ body {
 
 
 .title {
-  background-color: black; 
+  background-color: black;
 }
+/* center title */
 .Game-title {
-    
     text-align: center;
     align-items: center;
+}
 
+/* center timer */
+.timer {
+  text-align: center;
+  align-items: center;
+  font-size: 25px;
+}
+/* center bottom buttons */
+.Start-Reset {
+  text-align: center; 
+  align-content: center; 
+  padding-bottom: 15px;
+}
+
+.Start {
+  background-color: black;
+  color: yellow;
+  
+}
+
+.Reset {
+  background-color: black;
+  color: yellow;
+  
 }
 
 h1 {

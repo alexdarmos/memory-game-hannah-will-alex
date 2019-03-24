@@ -29,8 +29,10 @@ body {
 .main-container {
     display: flex;
     flex-direction: column;
+    align-content: center;
     justify-content: center;
-    width: 100%;
+    width: auto;
+    
 }
 
 
@@ -57,7 +59,7 @@ body {
     color: white;
     font-family: "Starjedi";
     background-color: rgba(0, 0, 0, 0.6);
-    width: 700px;
+    width: auto;
     text-align: center;
     font-size: 30px;
     margin-top: 50px;
@@ -69,11 +71,8 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.6);;
-    width: 85%;
+    width: auto;
     margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
     padding: 10px;
     
     
@@ -148,8 +147,14 @@ h2 {
     z-index: 1;
   }
 
-  button {
+  .Start-Reset {
+    width: auto 0;
+    display: flex;
     justify-content: center;
+  }
+
+  button {
+    
     width: 200px;
     height: 90px;
     margin: 5px;

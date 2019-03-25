@@ -2,9 +2,9 @@
 $(() => {
     let totalSeconds = 0;
     let totalMinutes =0;
-    let interval;
+    let interval, cardOne, cardTwo;
     let clickCount = 0;
-    let cardOne, cardTwo;
+    let countDown = 30;
 
     //sets timer in the DOM
     function domTimer() {
@@ -12,8 +12,9 @@ $(() => {
         $(`.minutes`).text(`Minutes: ${totalMinutes}`);
     };
 
-    //increments time
+    //Keeps track of time it takes user to complete game
     function setTime() {
+        //increments timer
         ++totalSeconds;
         //temporarily stops timer at 5 seconds for my sanity
         if (totalSeconds === 59) {
@@ -23,7 +24,24 @@ $(() => {
         domTimer();  
     };
 
-    //works on dummy cards-currently not in html
+    //function to start game after 30 seconds- gives user time to memorize cards before they flip
+    function delayStart() {
+        console.log(`Start Game`);
+        //start in-game timer
+        interval = setInterval(setTime, 1000);
+    };
+
+    //displays the count down timer before game actually starts
+    function delayTimer() {
+        if (countDown != 0) {
+            --countDown;
+            console.log(`Count Down: ${countDown}`);
+        } else {
+            return;
+        }
+    }
+
+    //compares cards based on the src, finds correctly matching cards, **need way to stop user from selecting same card twice** 
     function compareCards(e) {
         //track number of clicks
         ++clickCount;
@@ -33,12 +51,11 @@ $(() => {
             ++clickCount;
         }
         // console.log(clickCount);
-
         if(clickCount === 1) {
-            cardOne = e.target.innerText;
+            cardOne = e.currentTarget.children[2].lastElementChild.src;
             console.log(cardOne);
         } else {
-            cardTwo = e.target.innerText;
+            cardTwo = e.currentTarget.children[2].lastElementChild.src;
             console.log(cardTwo);
         }
 
@@ -53,11 +70,12 @@ $(() => {
 
     //start game
     $(`#Start`).on(`click`, (e) => {
-        console.log(`Game Started`); 
-
-        //start timer
-        interval = setInterval(setTime, 1000);
-    })
+        console.log(`Game Starting, 30 second delay started`); 
+        //function to delay start of game by 30 seconds
+        setTimeout(delayStart, 30000);
+        //Countdown 30 second timer before game start
+        setInterval(delayTimer, 1000);
+    });
 
     //reset game
     $(`#Reset`).on(`click`, (e) => {
@@ -72,13 +90,14 @@ $(() => {
 
     });
 
-    
-    $(`.flip-card`).on(`click`, (e) => {
+    //event listener for user card selection
+    $(`.flip-card-inner`).on(`click`, (e) => {
         //compare cards on click
         compareCards(e);
+        //plays audio on click
         var audio = document.getElementById("audio");
         audio.play();
-        console.log(e);
+        // console.log(e);
     });
 
     // function play(){
@@ -89,6 +108,7 @@ $(() => {
     //     // audio2.play();
     //     }
 
+    //event listener to flip card animation
     $('.flip-card').click(function() {
         $(this).toggleClass('active');
     });

@@ -1,5 +1,13 @@
 //document ready jquery
 $(() => {
+    
+        $(`.flip-card-inner`).on(`click`, (e) => {
+        var audio = document.getElementById("audio");
+        audio.play();
+        
+    });
+
+
     let totalSeconds = 0;
     let totalMinutes =0;
     let interval, cardOne, cardTwo;

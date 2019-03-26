@@ -1,57 +1,5 @@
 //document ready jquery
 $(() => {
-<<<<<<< HEAD
-
-let totalSeconds = 0;
-let totalMinutes =0;
-let interval = setInterval(setTime, 1000);
-
-function setTime() {
-    ++totalSeconds;
-    $(`.seconds`).text(`Seconds: ${totalSeconds}`);
-    $(`.minutes`).text(`Minutes: ${totalMinutes}`);
-
-    //temporarily stops timer at 5 seconds for my sanity
-    if (totalSeconds === 59) {
-        totalMinutes += 1;
-        totalSeconds = 0;
-    }
-};
-})
-
-
-// Possible implementation for button flipping - Still requires CSS
-$('#flipto').on("click", function(event) {
-  event.preventDefault();
-
-  var face = $(this).data("face");
-
-  if ( face == "bottom" ) {
-    $(".cube").removeClass("flip-to-top").addClass("flip-to-bottom");
-    $(this).data("face", "top").text("Flip: to top");
-  } else {
-    $(".cube").removeClass("flip-to-bottom").addClass("flip-to-top");
-    $(this).data("face", "bottom").text("Flip: to bottom");
-  }
-});
-    $('.flip-card').click(function() {
-        $(this).toggleClass('active');
-    });
-
-    // function play(){
-    //     // var audio = document.getElementById("audio");
-    //     // audio.play();
-
-    //     // var audio2 = document.getElementById("audio-2");
-    //     // audio2.play();
-    //     }
-
-    let totalSeconds = 0;
-    let totalMinutes =0;
-    let interval;
-    let clickCount = 0;
-    let cardOne, cardTwo;
-=======
     
         $(`.flip-card-inner`).on(`click`, (e) => {
         var audio = document.getElementById("audio");
@@ -65,7 +13,6 @@ $('#flipto').on("click", function(event) {
     let interval, cardOne, cardTwo;
     let clickCount = 0;
     let countDown = 30;
->>>>>>> master
 
     //sets timer in the DOM
     function domTimer() {
@@ -73,35 +20,15 @@ $('#flipto').on("click", function(event) {
         $(`.minutes`).text(`Minutes: ${totalMinutes}`);
     };
 
-<<<<<<< HEAD
-    //increments time
-    function setTime() {
-=======
     //Keeps track of time it takes user to complete game
     function setTime() {
         //increments timer
->>>>>>> master
         ++totalSeconds;
         //temporarily stops timer at 5 seconds for my sanity
         if (totalSeconds === 59) {
             totalMinutes += 1;
             totalSeconds = 0;
         }
-<<<<<<< HEAD
-
-    };
-    
-    
-    function play(){
-        var audio = document.getElementById("audio");
-        audio.play();
-
-
-        domTimer();  
-    };
-
-    //works on dummy cards-currently not in html
-=======
         domTimer();  
     };
 
@@ -123,7 +50,6 @@ $('#flipto').on("click", function(event) {
     };
 
     //compares cards based on the src, finds correctly matching cards, **need way to stop user from selecting same card twice** 
->>>>>>> master
     function compareCards(e) {
         //track number of clicks
         ++clickCount;
@@ -133,63 +59,14 @@ $('#flipto').on("click", function(event) {
             ++clickCount;
         }
         // console.log(clickCount);
-<<<<<<< HEAD
-
-        if(clickCount === 1) {
-            cardOne = e.target.innerText;
-            console.log(cardOne);
-        } else {
-            cardTwo = e.target.innerText;
-            console.log(cardTwo);
-        }
-
-        if(clickCount === 2) {
-            if(cardOne === cardTwo) {
-                console.log(`Match!`);
-            } else {
-                console.log(`Mismatch!`);
-            }
-=======
         if(clickCount === 1) {
             cardOne = e.currentTarget.children[2].lastElementChild.src;
             console.log(cardOne);
         } else {
             cardTwo = e.currentTarget.children[2].lastElementChild.src;
             console.log(cardTwo);
->>>>>>> master
         }
-    };
 
-    //start game
-    $(`#Start`).on(`click`, (e) => {
-        console.log(`Game Started`); 
-
-        //start timer
-        interval = setInterval(setTime, 1000);
-    })
-
-    //reset game
-    $(`#Reset`).on(`click`, (e) => {
-        console.log(`Game Reset`);
-        //pause timer
-        clearInterval(interval);
-        //reset timer
-        totalSeconds = 0;
-        totalMinutes = 0; 
-        //reset timer in dom
-        domTimer();  
-
-    });
-
-<<<<<<< HEAD
-    
-    $(`.flip-card`).on(`click`, (e) => {
-        //compare cards on click
-        compareCards(e);
-        var audio = document.getElementById("audio");
-        audio.play();
-        console.log(e);
-=======
         if(clickCount === 2) {
             if(cardOne === cardTwo) {
                 console.log(`Match!`);
@@ -228,8 +105,29 @@ $('#flipto').on("click", function(event) {
         var audio = document.getElementById("audio");
         audio.play();
         // console.log(e);
->>>>>>> master
     });
+
+    function shuffle(array) {
+        let length = array.length;
+        let random;
+        let index;
+    
+    // While there are elements in the array
+        while (length > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * length);
+    // Decrease length by 1
+            length--;
+    // Swap the array elements 
+            random = array[length];
+            array[length] = array[index];
+            array[index] = random;
+        }
+        //Return a random element
+        return random;
+    }
+
+    
 
     // function play(){
     //     // var audio = document.getElementById("audio");
@@ -239,10 +137,7 @@ $('#flipto').on("click", function(event) {
     //     // audio2.play();
     //     }
 
-<<<<<<< HEAD
-=======
     //event listener to flip card animation
->>>>>>> master
     $('.flip-card').click(function() {
         $(this).toggleClass('active');
     });
@@ -263,8 +158,4 @@ $('#flipto').on("click", function(event) {
     //   }
   
 
-<<<<<<< HEAD
-
-=======
 });
->>>>>>> master

@@ -4,9 +4,15 @@ $(() => {
         $(`.flip-card-inner`).on(`click`, (e) => {
         var audio = document.getElementById("audio");
         audio.play();
-
         
     });
+
+    $(`.flip-card-inner`).on(`click`, (e) => {
+       var audio = document.getElementById("audio-2");
+        audio.play();
+        
+    });
+
 
     let totalSeconds = 0;
     let totalMinutes =0;

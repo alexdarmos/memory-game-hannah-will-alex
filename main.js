@@ -1,18 +1,15 @@
 //document ready jquery
 $(() => {
-    
-        $(`.flip-card-inner`).on(`click`, (e) => {
-        var audio = document.getElementById("audio");
-        audio.play();
-        
-    });
-
-
     let totalSeconds = 0;
     let totalMinutes =0;
     let interval, cardOne, cardTwo;
     let clickCount = 0;
     let countDown = 30;
+
+    $(`.flip-card-inner`).on(`click`, (e) => {
+        var audio = document.getElementById("audio");
+        audio.play();
+    });
 
     //sets timer in the DOM
     function domTimer() {

@@ -107,6 +107,28 @@ $(() => {
         // console.log(e);
     });
 
+    function shuffle(array) {
+        let length = array.length;
+        let random;
+        let index;
+    
+    // While there are elements in the array
+        while (length > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * length);
+    // Decrease length by 1
+            length--;
+    // Swap the array elements 
+            random = array[length];
+            array[length] = array[index];
+            array[index] = random;
+        }
+        //Return a random element
+        return random;
+    }
+
+    
+
     // function play(){
     //     // var audio = document.getElementById("audio");
     //     // audio.play();

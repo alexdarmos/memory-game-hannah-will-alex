@@ -39,7 +39,7 @@ $(() => {
         } else {
             return;
         }
-    }
+    };
 
     //compares cards based on the src, finds correctly matching cards, **need way to stop user from selecting same card twice** 
     function compareCards(e) {
@@ -87,7 +87,6 @@ $(() => {
         totalMinutes = 0; 
         //reset timer in dom
         domTimer();  
-
     });
 
     //event listener for user card selection

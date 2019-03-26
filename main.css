@@ -35,6 +35,10 @@ body {
     
 }
 
+.content-container {
+  /* display: flex; */
+
+}
 
 .Game-title {
     background-color: black;

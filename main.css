@@ -1,9 +1,26 @@
 * {
+<<<<<<< HEAD
   box-sizing: border-box;
   font-family: starjhol;
   color: rgb(233, 210, 3);
   
   
+=======
+    box-sizing: border-box;
+     
+}
+
+@font-face {
+    font-family: "Starjhol";
+    src: url(Starjhol.ttf) format("truetype");
+    
+>>>>>>> master
+}
+
+@font-face {
+    font-family: "Starjedi";
+    src: url(Starjedi.ttf) format("truetype");
+
 }
 
 body {
@@ -16,6 +33,7 @@ body {
   background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
 }
 
+<<<<<<< HEAD
 @font-face {
     font-family: "Starjhol";
     src: url(Starjhol.ttf) format("truetype");
@@ -33,6 +51,20 @@ body {
 /* flex-direction: row; */
 
 }
+=======
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: auto;
+    
+}
+
+.content-container {
+  /* display: flex; */
+>>>>>>> master
 
 /* center and arrange cards */
 .cards {
@@ -46,6 +78,7 @@ background-color: black;
 }
 /* center title */
 .Game-title {
+<<<<<<< HEAD
   text-align: center;
   align-items: center;
 }
@@ -81,22 +114,88 @@ h1 {
   font-size: 60px;
   text-align: center;
   align-items: center; 
+=======
+    background-color: black;
+    
+
+}
+
+
+
+.name {
+    font-family: "Starjhol";
+    color: rgb(233, 210, 3);
+    font-size: 60px;
+    position: relative;
+    text-align: center;
+
+    
+>>>>>>> master
 }
 
 
 .timer {
+<<<<<<< HEAD
+=======
+    color: white;
+    font-family: "Starjedi";
+    background-color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+   
+>>>>>>> master
     
 }
 
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 50px;
+    padding: 10px;
+    
+    
+
+}
+
+
+
+
+
+.card {
+    align-content: center;
+    justify-content: center;
+    margin: 5px;
+
+
+}
+
+
+
 h2 {
+<<<<<<< HEAD
   background-color: black;
   font-size: 30px;
   text-align: center;
   align-content: center;
+=======
+    font-family: "Starjhol";
+    color: rgb(233, 210, 3);
+    background-color: black;
+    font-size: 30px;
+    text-align: center;
+    align-content: center;
+>>>>>>> master
 }
 
 
+
+
 .flip-card {
+<<<<<<< HEAD
   background-color: transparent;
   width: 300px;
   height: 300px;
@@ -134,4 +233,68 @@ h2 {
   transform: rotateY(180deg);
   z-index: 1;
 }
+=======
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card.active .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+
+  .Start-Reset {
+    width: auto 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  button {
+    
+    width: 200px;
+    height: 90px;
+    margin: 5px;
+    font-size: 25px;
+    background-color: black;
+    color: rgb(233, 210, 3);
+    font-family: "Starjedi";
+    position: relative;
+    text-align: center;
+
+  }
+
+>>>>>>> master
 

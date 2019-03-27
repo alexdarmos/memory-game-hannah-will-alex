@@ -13,9 +13,15 @@ $(() => {
 
     //sets timer in the DOM
     function domTimer() {
-        $(`.seconds`).text(`Seconds: ${totalSeconds}`);
-        $(`.minutes`).text(`Minutes: ${totalMinutes}`);
+        // $(`.seconds`).text(`Seconds: ${totalSeconds}`);
+        // $(`.minutes`).text(`Minutes: ${totalMinutes}`);
+        $(`.timer`).text(`Timer: ${totalMinutes}:${totalSeconds}`);
     };
+
+    //sets countdown timer in DOM
+    function domCountDown() {
+        $(`.timer`).text(`Game Begins in: ${countDown} Seconds`);
+    }
 
     //Keeps track of time it takes user to complete game
     function setTime() {
@@ -40,10 +46,11 @@ $(() => {
     function delayTimer() {
         if (countDown != 0) {
             --countDown;
-            console.log(`Count Down: ${countDown}`);
+            // console.log(`Count Down: ${countDown}`);
+            
         } else {
             return;
-        }
+        }domCountDown();
     };
 
     //compares cards based on the src, finds correctly matching cards, **need way to stop user from selecting same card twice** 

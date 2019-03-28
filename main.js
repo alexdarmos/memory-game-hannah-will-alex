@@ -97,6 +97,8 @@ $(() => {
         totalMinutes = 0; 
         //reset timer in dom
         domTimer();  
+        //flip the cards again
+        flipCards($(`.flip-card`));
     });
 
     //event listener for user card selection

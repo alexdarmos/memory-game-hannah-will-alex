@@ -13,6 +13,7 @@ $(() => {
     let interval, cardOne, cardTwo;
     let clickCount = 0;
     let countDown = 30;
+    let gifArray = ['darthvader.gif', 'hangif.gif', 'leia-gif.gif', 'lukegif.gif', 'obi.gif']; 
 
     //sets timer in the DOM
     function domTimer() {
@@ -70,6 +71,7 @@ $(() => {
         if(clickCount === 2) {
             if(cardOne === cardTwo) {
                 console.log(`Match!`);
+                $(cardOne).hide("slow");
             } else {
                 console.log(`Mismatch!`);
             }
@@ -127,6 +129,7 @@ $(() => {
         return random;
     }
 
+    // console.log(shuffle(gifArray));
     
 
     // function play(){

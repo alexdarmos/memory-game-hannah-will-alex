@@ -6,7 +6,7 @@ $(() => {
         audio.play();
         
     });
-
+    
 
     let totalSeconds = 0;
     let totalMinutes =0;
@@ -83,6 +83,9 @@ $(() => {
         setTimeout(delayStart, 30000);
         //Countdown 30 second timer before game start
         setInterval(delayTimer, 1000);
+        $('.card-container').css('display', 'flex');
+        $('.opening-video').css('display', 'none');
+        
     });
 
     //reset game
@@ -134,6 +137,30 @@ $(() => {
     //     $(".cube").removeClass("flip-to-bottom").addClass("flip-to-top");
     //     $(this).data("face", "bottom").text("Flip: to bottom");
     //   }
+
+
+//     $(document).ready (() => {
+
+
+//         function hidden() {
+        
+    
+    
+    
+//         $('#grow-me').addClass('big');
+//         $('#shrink-me').removeClass('big');
+//         console.log($('li'));
+//         $('.link').attr('href', 'https://www.example.com');
+//         $('.link').text('somewhere');
+//         $('#hide-me').css('display', 'none');
+//         $('#show-me').css('display', 'block');
+    
+//         $('#name').insertBefore('Welcome');
+        
+//     }$("#action").on("click", hidden);
+        
+    
+//     });    
   
 
 });

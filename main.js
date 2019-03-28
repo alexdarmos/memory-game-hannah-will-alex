@@ -5,11 +5,13 @@ $(() => {
     let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo;
     let clickCount = 0;
     let countDown = 5;
-
+    
     $(`.flip-card-inner`).on(`click`, (e) => {
         var audio = document.getElementById("audio");
         audio.play();
+        
     });
+    
 
     //sets timer in the DOM
     function domTimer() {
@@ -129,9 +131,10 @@ $(() => {
         setTimeout(delayStart, 5000);
         //Countdown 30 second timer before game start
         setInterval(delayTimer, 1000);
-        //flips all cards
+        $('.card-container').css('display', 'flex');
+        $('.opening-video').css('display', 'none');
         flipCards($('.flip-card'));
-
+        
     });
 
     //reset game
@@ -155,5 +158,56 @@ $(() => {
         audio.play();
         // console.log(e);
     });
+
+    // function play(){
+    //     // var audio = document.getElementById("audio");
+    //     // audio.play();
+
+    //     // var audio2 = document.getElementById("audio-2");
+    //     // audio2.play();
+    //     }
+
+    //event listener to flip card animation
+    
+ 
+    
+    // Possible implementation for button flipping - Still requires CSS
+    // $('#flipto').on("click", function(event) {
+    //   event.preventDefault();
+    
+    //   var face = $(this).data("face");
+    
+    //   if ( face == "bottom" ) {
+    //     $(".cube").removeClass("flip-to-top").addClass("flip-to-bottom");
+    //     $(this).data("face", "top").text("Flip: to top");
+    //   } else {
+    //     $(".cube").removeClass("flip-to-bottom").addClass("flip-to-top");
+    //     $(this).data("face", "bottom").text("Flip: to bottom");
+    //   }
+
+
+//     $(document).ready (() => {
+
+
+//         function hidden() {
+        
+    
+    
+    
+//         $('#grow-me').addClass('big');
+//         $('#shrink-me').removeClass('big');
+//         console.log($('li'));
+//         $('.link').attr('href', 'https://www.example.com');
+//         $('.link').text('somewhere');
+//         $('#hide-me').css('display', 'none');
+//         $('#show-me').css('display', 'block');
+    
+//         $('#name').insertBefore('Welcome');
+        
+//     }$("#action").on("click", hidden);
+        
+    
+//     });    
+  
 
 });

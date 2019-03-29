@@ -5,11 +5,13 @@ $(() => {
     let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo;
     let clickCount = 0;
     let countDown = 5;
+    let flag = false;
     
+
+    //
     $(`.flip-card-inner`).on(`click`, (e) => {
         var audio = document.getElementById("audio");
         audio.play();
-        
     });
     
 
@@ -39,12 +41,20 @@ $(() => {
 
     //function to start game after 30 seconds- gives user time to memorize cards before they flip
     function delayStart() {
-        console.log(`Start Game`);
+        console.log(`Game Started!`);
+        flag = true;
+        clickCount = 0;
+
+
+        //event listener to flip card animation on click
+    $('.flip-card').click(function() {
+        $(this).toggleClass('active');
+    });
+
         //start in-game timer
         interval = setInterval(setTime, 1000);
         //flip cards back to hidden
         flipCards($('.flip-card'));
-
     };
 
     //displays the count down timer before game actually starts
@@ -55,7 +65,8 @@ $(() => {
             
         } else {
             return;
-        }domCountDown();
+        }
+        domCountDown();
     };
 
     //compares cards based on the src, finds correctly matching cards, **need way to stop user from selecting same card twice** 
@@ -68,6 +79,9 @@ $(() => {
             ++clickCount;
         }
         // console.log(clickCount);
+
+    if(flag === true) {
+
         if(clickCount === 1) {
             cardOne = e.currentTarget.children[2].lastElementChild.src;
             console.log(cardOne);
@@ -80,7 +94,7 @@ $(() => {
             console.log(cardTwo);
         }
 
-        if( selectedCardOne != selectedCardTwo) {
+        if(selectedCardOne != selectedCardTwo) {
             if(clickCount === 2) {
                 if(cardOne === cardTwo) {
                     console.log(`Match!`);
@@ -89,9 +103,13 @@ $(() => {
                 }
             }
     }   else {
-        return;
+        console.log(`Can't select the same card!`);
     }
-    };
+} else {
+    console.log(`game has not started`);
+}
+    
+};
 
     //function to flip all cards at beginning
     function flipCards(target) {
@@ -118,15 +136,9 @@ $(() => {
         return random;
     }
 
-    //event listener to flip card animation on click
-    $('.flip-card').click(function() {
-        $(this).toggleClass('active');
-    });
-
-
     //start game
     $(`#Start`).on(`click`, (e) => {
-        console.log(`Game Starting, 30 second delay started`); 
+        console.log(`Game will start in 30 seconds!`); 
         //function to delay start of game by 30 seconds
         setTimeout(delayStart, 5000);
         //Countdown 30 second timer before game start
@@ -134,6 +146,7 @@ $(() => {
         $('.card-container').css('display', 'flex');
         $('.opening-video').css('display', 'none');
         flipCards($('.flip-card'));
+        $(`.flip-card`).unbind(`click`);
         
     });
 
@@ -158,56 +171,4 @@ $(() => {
         audio.play();
         // console.log(e);
     });
-
-    // function play(){
-    //     // var audio = document.getElementById("audio");
-    //     // audio.play();
-
-    //     // var audio2 = document.getElementById("audio-2");
-    //     // audio2.play();
-    //     }
-
-    //event listener to flip card animation
-    
- 
-    
-    // Possible implementation for button flipping - Still requires CSS
-    // $('#flipto').on("click", function(event) {
-    //   event.preventDefault();
-    
-    //   var face = $(this).data("face");
-    
-    //   if ( face == "bottom" ) {
-    //     $(".cube").removeClass("flip-to-top").addClass("flip-to-bottom");
-    //     $(this).data("face", "top").text("Flip: to top");
-    //   } else {
-    //     $(".cube").removeClass("flip-to-bottom").addClass("flip-to-top");
-    //     $(this).data("face", "bottom").text("Flip: to bottom");
-    //   }
-
-
-//     $(document).ready (() => {
-
-
-//         function hidden() {
-        
-    
-    
-    
-//         $('#grow-me').addClass('big');
-//         $('#shrink-me').removeClass('big');
-//         console.log($('li'));
-//         $('.link').attr('href', 'https://www.example.com');
-//         $('.link').text('somewhere');
-//         $('#hide-me').css('display', 'none');
-//         $('#show-me').css('display', 'block');
-    
-//         $('#name').insertBefore('Welcome');
-        
-//     }$("#action").on("click", hidden);
-        
-    
-//     });    
-  
-
 });

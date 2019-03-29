@@ -81,7 +81,7 @@ $(() => {
         // console.log(clickCount);
 
     if(flag === true) {
-
+        
         if(clickCount === 1) {
             cardOne = e.currentTarget.children[2].lastElementChild.src;
             console.log(cardOne);

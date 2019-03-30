@@ -102,6 +102,7 @@ $(() => {
                 if(cardOne === cardTwo) {
                     console.log("Match!");
                     cardsMatched++;
+                    e.currentTarget.children[2].lastElementChild.attr("src", "check.jpg");
                 } else {
                     console.log("Mismatch!");
                 }

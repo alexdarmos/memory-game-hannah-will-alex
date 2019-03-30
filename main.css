@@ -251,14 +251,17 @@ element with a lower stack order.*/
     z-index: 2;
 }
 
+.page-title {
+    background-color: black;
+    position: relative;
+}
+
 .name {
     background-color: black;
     font-size: 65px;
-    padding-top: 20px;
-    padding-bottom:20px;
-    position: relative;
+    padding-top: 10px;
+    padding-bottom:10px;
     text-align: center;
-    margin: auto;      
 }
 
 .opening-video {

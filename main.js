@@ -6,6 +6,8 @@ $(() => {
     let clickCount = 0;
     let countDown = 5;
     let flag = false;
+    let cardsMatched = 0; 
+    let gameWon = false; 
     
 
     //
@@ -97,9 +99,10 @@ $(() => {
         if(selectedCardOne != selectedCardTwo) {
             if(clickCount === 2) {
                 if(cardOne === cardTwo) {
-                    console.log(`Match!`);
+                    console.log("Match!");
+                    cardsMatched++;
                 } else {
-                    console.log(`Mismatch!`);
+                    console.log("Mismatch!");
                 }
             }
     }   else {
@@ -108,8 +111,13 @@ $(() => {
 } else {
     console.log(`game has not started`);
 }
-    
+    //Check to see if the user has won the game
+    if(cardsMatched === 5) {
+    gameWon = true;
+    console.log("You won the game!")
+    }
 };
+
 
     //function to flip all cards at beginning
     function flipCards(target) {
@@ -136,9 +144,11 @@ $(() => {
         return random;
     }
 
+    
+
     //start game
     $(`#Start`).on(`click`, (e) => {
-        console.log(`Game will start in 30 seconds!`); 
+        console.log(`Game will start in 5 seconds!`); 
         //function to delay start of game by 30 seconds
         setTimeout(delayStart, 5000);
         //Countdown 30 second timer before game start

@@ -1,20 +1,17 @@
 /* This is the smallest size for phones */
 * {
-    box-sizing: border-box;
-     
+    box-sizing: border-box;  
 }
 
 /* font-face imports the font faster */
 @font-face {
     font-family: "Starjhol";
     src: url(Starjhol.ttf) format("truetype");
-    
 }
 
 @font-face {
     font-family: "Starjedi";
     src: url(Starjedi.ttf) format("truetype");
-
 }
 
 /* this was to fit background to entire screen and size accordingly */
@@ -34,8 +31,7 @@ body {
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    width: auto;
-    
+    width: auto;  
 }
 
 /* this is the main header, positioned relative to page */
@@ -44,9 +40,7 @@ body {
     color: rgb(233, 191, 3);
     font-size: 60px;
     background-color: black;
-    text-align: center;
-
-    
+    text-align: center; 
 }
 
 /* mobile / tablet will not have a video option*/
@@ -54,12 +48,9 @@ body {
     display: none;
 }
 
-
 video {
-    display: none;
-    
+    display: none;  
 }
-
 
 .timer {
     color: white;
@@ -68,9 +59,7 @@ video {
     width: auto;
     text-align: center;
     font-size: 30px;
-    margin-top: 50px;
-   
-    
+    margin-top: 50px; 
 }
 
 
@@ -82,12 +71,7 @@ video {
     width: auto;
     margin-top: 50px;
     padding: 10px;
-    
-    
-
 }
-
-
 
 
 /* this child class grabs all the cards to position to center per flex */
@@ -95,8 +79,6 @@ video {
     align-content: center;
     justify-content: center;
     margin: 5px;
-
-
 }
 
 
@@ -111,7 +93,6 @@ h2 {
 }
 
 
-
 /* The perspective property defines how far the 
 object is away from the user. So, a lower value will 
 result in a more intensive 3D effect than a higher value. */
@@ -120,14 +101,14 @@ result in a more intensive 3D effect than a higher value. */
     width: 90px;
     height: 90px;
     perspective: 1000px;
-  }
+}
 
 
   /* this sizes all the gifs */
 input {
-      width: 90px;
-      height: 90px;
-  }
+    width: 90px;
+    height: 90px;
+}
   
 
 /* 
@@ -149,7 +130,7 @@ with the transform property. */
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
+}
   
 
   /* The transform property applies a 2D or 3D transformation 
@@ -160,7 +141,7 @@ Defines a 3D rotation along the Y-axis
 .active triggers the event click in the js file */
 .flip-card.active .flip-card-inner {
     transform: rotateY(180deg);
-  }
+}
 
 /* The backface-visibility property defines whether 
 or not the back face of an element should be visible 
@@ -169,38 +150,34 @@ is a mirror image of the front face being displayed.
 
 This property is useful when an element is rotated. 
 It lets you choose if the user should see the back face or not. */
-  .flip-card-front, .flip-card-back {
+.flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-  }
+}
   
-
-
-  .flip-card-front {
+.flip-card-front {
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
- 
-  }
+}
   
-  .flip-card-back {
+.flip-card-back {
     transform: rotateY(180deg);
     width: 90px;
     height: 90px;
-  }
+}
 
-  .Start-Reset {
+.Start-Reset {
     width: auto 0;
     display: flex;
     justify-content: center;
-    
-  }
 
-  button {
-    
+}
+
+button {
     width: 180px;
     height: 90px;
     margin: 10px;
@@ -209,18 +186,14 @@ It lets you choose if the user should see the back face or not. */
     color: rgb(233, 191, 3);
     font-family: "Starjedi";
     text-align: center;
-
-
   }
 
 
 
 
+
 /* This is Small/medium size for tablets */
-
 @media only screen and (min-width: 500px) {
-
-
 
 
 .timer {
@@ -235,26 +208,20 @@ h2 {
     font-size: 20px;
 }
 
-
 .flip-card {
     width: 150px;
     height: 150px;
-  }
+}
 
-  input {
-      width: 150px;
-      height: 150px;
-  }
-  
+input {
+    width: 150px;
+    height: 150px;
+}
   
   .flip-card-back {
     width: 150px;
     height: 150px;
-  }
-
-
-
-
+}
 }
 
 
@@ -264,10 +231,9 @@ h2 {
 
     /* positioned relative to its normal position. Needed to
     add this to have button and video work */
-    body {
-        position: relative;
-    }
-
+body {
+    position: relative;
+}
 
 /* added a fun curser and used getElementById / event listener
  mousemove to move along the Y and X axes
@@ -285,151 +251,65 @@ element with a lower stack order.*/
     z-index: 2;
 }
 
-    
-    
-    
-    .name {
-        background-color: black;
-        font-size: 65px;
-        padding-top: 20px;
-        padding-bottom:20px;
-        margin: auto;
-        position: relative;
-        text-align: center;
-    
-        
-    }
-    
-    .opening-video {
-        display: flex;
-        justify-content: flex-start;
-        margin-left: 20px;
-    }
+.name {
+    background-color: black;
+    font-size: 65px;
+    padding-top: 20px;
+    padding-bottom:20px;
+    position: relative;
+    text-align: center;
+    margin: auto;      
+}
 
-    video {
-        display: flex;
-        position: relative;
+.opening-video {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 20px;
+}
 
-    }
+video {
+    display: flex;
+    position: relative;
+}
+
+.card-container {
+    margin-top: 50px;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 30px;
+}
     
+.flip-card {
+    width: 200px;
+    height: 200px;
+}
+
+input {
+    width: 200px;
+    height: 200px;
+}
     
-    .timer {
-        color: white;
-        font-family: "Starjedi";
-        background-color: rgba(0, 0, 0, 0.6);
-        width: auto;
-        text-align: center;
-        font-size: 30px;
-        margin-top: 50px;
-       
-        
-    }
-    
-    .card-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: auto;
-        margin-top: 50px;
-        padding: 10px;
-        
-        
-    
-    }
-    
-    
-    
-    
-    
-    .card {
-        align-content: center;
-        justify-content: center;
-        margin: 5px;
-    
-    
-    }
-    
-    
-    
-    h2 {
-        font-family: "Starjhol";
-        color: rgb(233, 191, 3);
-        background-color: black;
-        font-size: 30px;
-        text-align: center;
-        align-content: center;
-    }
-    
-    
-    
-    
-    .flip-card {
-        background-color: transparent;
-        width: 200px;
-        height: 200px;
-        perspective: 1000px;
-      }
-    
-      input {
-          width: 200px;
-          height: 200px;
-      }
-      
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      }
-      
-      .flip-card.active .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-      
-      .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-      }
-      
-      .flip-card-front {
-        background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-      }
-      
-      .flip-card-back {
-        background-color: #2980b9;
-        transform: rotateY(180deg);
-        z-index: 1;
-        width: 200px;
-        height: 200px;
-      }
-    
-      .Start-Reset {
-        width: auto 0;
-        display: flex;
-        margin-left: 110px;
-        justify-content: flex-start;
-        
-      }
-    
-      button {
-        
-        width: 200px;
-        height: 90px;
-        margin: 5px;
-        font-size: 25px;
-        background-color: black;
-        color: rgb(233, 191, 3);
-        font-family: "Starjedi";
-        position: relative;
-        text-align: center;
-    
-      }
+    .flip-card-back {
+    width: 200px;
+    height: 200px;
+}
+
+    /* in desktop you'll see this to the left,
+    but in js I repositioned to center for mobile
+    by adding a new property when start is clicked */
+.Start-Reset {
+    width: auto 0;
+    display: flex;
+    margin-left: 110px;
+    justify-content: flex-start;
+}
+
+button { 
+    width: 200px;
+    height: 90px;
+    margin: 5px;
+}
+}

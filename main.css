@@ -1,8 +1,10 @@
+/* This is the smallest size for phones */
 * {
     box-sizing: border-box;
      
 }
 
+/* font-face imports the font faster */
 @font-face {
     font-family: "Starjhol";
     src: url(Starjhol.ttf) format("truetype");
@@ -15,6 +17,7 @@
 
 }
 
+/* this was to fit background to entire screen and size accordingly */
 body {
     width: 100%;
     height: 100%;
@@ -25,7 +28,7 @@ body {
     background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
 }
 
-
+/* this is the parent container, display: flex set to help children containers */
 .main-container {
     display: flex;
     flex-direction: column;
@@ -35,26 +38,18 @@ body {
     
 }
 
-
-.Game-title {
-    background-color: black;
-    
-    
-
-}
-
-
-
+/* this is the main header, positioned relative to page */
 .name {
     font-family: "Starjhol";
-    color: rgb(233, 210, 3);
-    font-size: 40px;
-    position: relative;
+    color: rgb(233, 191, 3);
+    font-size: 60px;
+    background-color: black;
     text-align: center;
 
     
 }
 
+/* mobile / tablet will not have a video option*/
 .opening-video {
     display: none;
 }
@@ -78,6 +73,8 @@ video {
     
 }
 
+
+/* this is the new parent to flex the cards within */
 .card-container {
     display: flex;
     justify-content: center;
@@ -93,7 +90,7 @@ video {
 
 
 
-
+/* this child class grabs all the cards to position to center per flex */
 .card {
     align-content: center;
     justify-content: center;
@@ -103,32 +100,48 @@ video {
 }
 
 
-
+/* this is the back of the card details*/
 h2 {
     font-family: "Starjhol";
-    color: rgb(233, 210, 3);
+    color: rgb(233, 191, 3);
     background-color: black;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     align-content: center;
 }
 
 
 
-
+/* The perspective property defines how far the 
+object is away from the user. So, a lower value will 
+result in a more intensive 3D effect than a higher value. */
 .flip-card {
     background-color: transparent;
-    width: 150px;
-    height: 150px;
+    width: 90px;
+    height: 90px;
     perspective: 1000px;
   }
 
-  input {
-      width: 150px;
-      height: 150px;
+
+  /* this sizes all the gifs */
+input {
+      width: 90px;
+      height: 90px;
   }
   
-  .flip-card-inner {
+
+/* 
+The transition property is a shorthand property for:
+transition-property
+transition-duration
+transition-timing-function
+transition-delay */
+
+/* The transform-style property specifies how nested 
+elements are rendered in 3D space.
+This property must be used together 
+with the transform property. */
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -138,10 +151,24 @@ h2 {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
   
-  .flip-card.active .flip-card-inner {
+
+  /* The transform property applies a 2D or 3D transformation 
+to an element. This property allows you to rotate, 
+scale, move, skew, etc., elements.
+Defines a 3D rotation along the Y-axis 
+
+.active triggers the event click in the js file */
+.flip-card.active .flip-card-inner {
     transform: rotateY(180deg);
   }
-  
+
+/* The backface-visibility property defines whether 
+or not the back face of an element should be visible 
+when facing the user.  The back face of an element 
+is a mirror image of the front face being displayed.
+
+This property is useful when an element is rotated. 
+It lets you choose if the user should see the back face or not. */
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -149,20 +176,20 @@ h2 {
     backface-visibility: hidden;
   }
   
+
+
   .flip-card-front {
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2;
+ 
   }
   
   .flip-card-back {
-    background-color: #2980b9;
     transform: rotateY(180deg);
-    z-index: 1;
-    width: 150px;
-    height: 150px;
+    width: 90px;
+    height: 90px;
   }
 
   .Start-Reset {
@@ -176,75 +203,97 @@ h2 {
     
     width: 180px;
     height: 90px;
-    margin: 5px;
+    margin: 10px;
     font-size: 25px;
     background-color: black;
-    color: rgb(233, 210, 3);
+    color: rgb(233, 191, 3);
     font-family: "Starjedi";
-    position: relative;
     text-align: center;
+
 
   }
 
 
 
 
+/* This is Small/medium size for tablets */
+
+@media only screen and (min-width: 500px) {
 
 
+
+
+.timer {
+    margin-top: 10px; 
+}
+
+.card-container {
+    margin-top: 5px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+
+.flip-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  input {
+      width: 150px;
+      height: 150px;
+  }
+  
+  
+  .flip-card-back {
+    width: 150px;
+    height: 150px;
+  }
+
+
+
+
+}
+
+
+/* This size is for computer screens */
   @media only screen and (min-width: 700px) {
 
 
-    * {
-        box-sizing: border-box;
-         
-    }
-    
-    @font-face {
-        font-family: "Starjhol";
-        src: url(Starjhol.ttf) format("truetype");
-        
-    }
-    
-    @font-face {
-        font-family: "Starjedi";
-        src: url(Starjedi.ttf) format("truetype");
-    
-    }
-    
+    /* positioned relative to its normal position. Needed to
+    add this to have button and video work */
     body {
-        width: 100%;
-        height: 100%;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
+        position: relative;
     }
-    
-    
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        width: auto;
-        
-    }
-    
-    
-    .Game-title {
-        background-color: black;
-        
-        
-    
-    }
+
+
+/* added a fun curser and used getElementById / event listener
+ mousemove to move along the Y and X axes
+ 
+The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an 
+element with a lower stack order.*/
+#falcon {
+    background-image: url("falcon2.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 450px;
+    z-index: 2;
+}
+
     
     
     
     .name {
-        font-family: "Starjhol";
-        color: rgb(233, 210, 3);
-        font-size: 60px;
+        background-color: black;
+        font-size: 65px;
+        padding-top: 20px;
+        padding-bottom:20px;
+        margin: auto;
         position: relative;
         text-align: center;
     
@@ -253,11 +302,14 @@ h2 {
     
     .opening-video {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-left: 20px;
     }
 
     video {
         display: flex;
+        position: relative;
+
     }
     
     
@@ -301,7 +353,7 @@ h2 {
     
     h2 {
         font-family: "Starjhol";
-        color: rgb(233, 210, 3);
+        color: rgb(233, 191, 3);
         background-color: black;
         font-size: 30px;
         text-align: center;
@@ -363,7 +415,8 @@ h2 {
       .Start-Reset {
         width: auto 0;
         display: flex;
-        justify-content: center;
+        margin-left: 110px;
+        justify-content: flex-start;
         
       }
     
@@ -374,7 +427,7 @@ h2 {
         margin: 5px;
         font-size: 25px;
         background-color: black;
-        color: rgb(233, 210, 3);
+        color: rgb(233, 191, 3);
         font-family: "Starjedi";
         position: relative;
         text-align: center;

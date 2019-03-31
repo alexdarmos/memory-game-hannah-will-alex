@@ -12,6 +12,7 @@ $(() => {
     let gameChoice = null;
 
 //this is called once user wins based on light or darkside choice
+//this will also show the video based on side
     function displayEndVideo() {
         if (gameChoice === 'lightside') {
             $('.end-video2').css('display', 'flex');

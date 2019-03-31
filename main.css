@@ -78,6 +78,7 @@ element with a lower stack order. This will go behind curser*/
     justify-content: center;
 }
 
+/* gifs for popup */
 #obi {
     width: 150px;
     height: 150px;
@@ -275,7 +276,7 @@ It lets you choose if the user should see the back face or not. */
     font-size: 30px;
  }
 
-
+/* no video for mobile */
  video {
      display: none;
  }

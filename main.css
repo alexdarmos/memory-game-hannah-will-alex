@@ -95,6 +95,10 @@ element with a lower stack order. This will go behind curser*/
     height: 70px;
     font-size: 20px;
     margin: auto;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
 }
 
 #darkside {
@@ -102,7 +106,12 @@ element with a lower stack order. This will go behind curser*/
     height: 70px;
     font-size: 20px;
     margin: auto;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
 }
+
 
 
 /* this is the parent container, display: flex set to help children containers */
@@ -331,6 +340,7 @@ input {
     add this to have cards flip */
 body {
     position: relative;
+    
 }
 
 

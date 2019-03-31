@@ -147,8 +147,8 @@ $(document).ready(() => {
     $('#dialog').fadeIn(3000); 	
 
 //if lightside button is clicked
-$('#lightside').click(function (e) {   
-    $('.window').css('display', 'none');
+$('#lightside').click(function (e) {
+    $('#popup').css('display', 'none');   
     $('#falcon').css('display', 'none');
 
     console.log(`Game Starting, 30 second delay started`); 
@@ -166,9 +166,7 @@ $('#lightside').click(function (e) {
 
 //if darkside button is clicked
 $('#darkside').click(function (e) {
-    
-    $('#mask').css('display', 'none');
-    $('.window').css('display', 'none');
+    $('#popup').css('display', 'none');
     $('#falcon').css('display', 'none');
     console.log(`Game Starting, 30 second delay started`); 
         //function to delay start of game by 30 seconds

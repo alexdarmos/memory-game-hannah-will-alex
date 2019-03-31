@@ -16,13 +16,13 @@
 
 /* this was to fit background to entire screen and size accordingly */
 body {
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
 }
 
 

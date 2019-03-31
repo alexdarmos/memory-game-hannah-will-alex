@@ -25,6 +25,86 @@ body {
     background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
 }
 
+
+#popup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    z-index: inherit;
+}
+
+
+/*The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an 
+element with a lower stack order. This will go behind curser*/
+.window {
+    position:absolute;
+    display:none;
+    z-index:2;
+    padding:20px;
+    text-align: center;
+}
+
+#dialog {
+    align-content: center;  
+    background-color:rgba(0, 0, 0, 0.842);
+    margin-top: 10px;
+    width:300px; 
+    height: 300px;
+    padding:10px;
+    margin: auto;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+}
+
+#path {
+    font-family: "Starjedi";
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    color:rgb(233, 191, 3);
+    font-size: 40px;
+}
+
+.light-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.light {
+    background-image: url("obi.gif");
+    width: 200px;
+    height: 120px;
+}
+
+.dark {
+    background-image: url("darthvader.gif");
+    width: 200px;
+    height: 200px;
+}
+
+#lightside {
+    width: 130px;
+    height: 70px;
+    font-size: 20px;
+    margin: auto;
+}
+
+#darkside {
+    width: 130px;
+    height: 70px;
+    font-size: 20px;
+    margin: auto;
+}
+
+
 /* this is the parent container, display: flex set to help children containers */
 .main-container {
     display: flex;
@@ -180,14 +260,21 @@ It lets you choose if the user should see the back face or not. */
     height: 90px;
 }
 
-.Start-Reset {
-    width: auto 0;
-    display: flex;
-    justify-content: center;
-    
-
+ 
+/* this will appear after side is chosen     */
+#Reset {
+    display: none;
+    width: 180px;
+    height: 90px;
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
 }
 
+/* 
 button {
     width: 180px;
     height: 90px;
@@ -197,7 +284,7 @@ button {
     color: rgb(233, 191, 3);
     font-family: "Starjedi";
     text-align: center;
-  }
+  } */
 
 
 
@@ -305,6 +392,30 @@ element with a lower stack order. This will go behind curser*/
     height: 200px;
 }
 
+
+#lightside {
+    width: 180px;
+    height: 90px;
+    margin: 10px;
+    font-size: 25px;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
+}
+
+#darkside {
+width: 180px;
+    height: 90px;
+    margin: 10px;
+    font-size: 25px;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
+}
+
+
 /* added a fun curser and used getElementById / event listener
  mousemove to move along the Y and X axes*/
 #falcon {
@@ -377,9 +488,12 @@ input {
 }
 
  
+
+
 /* this will appear after side is chosen     */
 #Reset {
     display: none;
+    justify-content: center;
     width: 200px;
     height: 90px;
     margin: 5px;

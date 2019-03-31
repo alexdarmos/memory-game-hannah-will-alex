@@ -137,11 +137,14 @@ $(document).ready(() => {
     var winW = $(window).width();
           
     //Set the popup window to center of screen
+    //refresh with difference in screen size
+    //tried flexing in css, but ran into conflicts
+    // with it not appearing as a popup
     $(id).css('top',  winH/2-$(id).height()/2);
     $(id).css('left', winW/2-$(id).width()/2);
 
     //transition effect
-    $('#dialog').fadeIn(2000); 	
+    $('#dialog').fadeIn(3000); 	
 
 //if lightside button is clicked
 $('#lightside').click(function (e) {   

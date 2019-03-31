@@ -78,23 +78,23 @@ element with a lower stack order. This will go behind curser*/
     justify-content: center;
 }
 
-.light {
-    background-image: url("obi.gif");
-    width: 200px;
-    height: 120px;
+#obi {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
 }
 
-.dark {
-    background-image: url("darthvader.gif");
-    width: 200px;
-    height: 200px;
+#vader {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
 }
 
 #lightside {
     width: 130px;
     height: 70px;
     font-size: 20px;
-    margin: auto;
+    margin: 5px;
     background-color: black;
     color: rgb(233, 191, 3);
     font-family: "Starjedi";
@@ -267,6 +267,13 @@ It lets you choose if the user should see the back face or not. */
     height: 100px;
 }
 
+
+
+.Start-Reset {
+    display: flex;
+    justify-content: center;
+}
+
  
 /* this will appear after side is chosen     */
 #Reset {
@@ -285,7 +292,7 @@ It lets you choose if the user should see the back face or not. */
 
 
 /* This size is for computer screens */
-  @media only screen and (min-width: 500px) {
+  @media only screen and (min-width: 600px) {
 
 
     /* positioned relative to its normal position. Needed to
@@ -347,16 +354,16 @@ element with a lower stack order. This will go behind curser*/
     justify-content: center;
 }
 
-.light {
-    background-image: url("obi.gif");
-    width: 200px;
-    height: 120px;
-}
-
-.dark {
-    background-image: url("darthvader.gif");
+#obi {
     width: 200px;
     height: 200px;
+    margin: 5px;
+}
+
+#vader {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
 }
 
 

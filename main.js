@@ -3,7 +3,7 @@ $(() => {
     //variables declared/initialized 
     let totalSeconds = 0;
     let totalMinutes = 0;
-    let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo, timeout, flipCardFront;
+    let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo, timeout;
     let clickCount = 0;
     let countDown = 5;
     let flag = false;

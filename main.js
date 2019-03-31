@@ -124,23 +124,9 @@ $(() => {
     });
 
 
-    //start game
-    $(`#Start`).on(`click`, (e) => {
-        console.log(`Game Starting, 30 second delay started`); 
-        //function to delay start of game by 30 seconds
-        setTimeout(delayStart, 5000);
-        //Countdown 30 second timer before game start
-        setInterval(delayTimer, 1000);
-        $('.card-container').css('display', 'flex');
-        $('.opening-video').css('display', 'none');
-        $('.Start-Reset').css('justify-content', 'center');
-        $('.Start-Reset').css('margin-left', '0px');
+   
 
-
-        flipCards($('.flip-card'));
-
-        
-    });
+    
 
     //reset game
     $(`#Reset`).on(`click`, (e) => {
@@ -164,60 +150,87 @@ $(() => {
         // console.log(e);
     });
 
-    // function play(){
-    //     // var audio = document.getElementById("audio");
-    //     // audio.play();
 
-    //     // var audio2 = document.getElementById("audio-2");
-    //     // audio2.play();
-    //     }
-
-    //event listener to flip card animation
-    
- 
-    
-    // Possible implementation for button flipping - Still requires CSS
-    // $('#flipto').on("click", function(event) {
-    //   event.preventDefault();
-    
-    //   var face = $(this).data("face");
-    
-    //   if ( face == "bottom" ) {
-    //     $(".cube").removeClass("flip-to-top").addClass("flip-to-bottom");
-    //     $(this).data("face", "top").text("Flip: to top");
-    //   } else {
-    //     $(".cube").removeClass("flip-to-bottom").addClass("flip-to-top");
-    //     $(this).data("face", "bottom").text("Flip: to bottom");
-    //   }
-
-
-//     $(document).ready (() => {
-
-
-//         function hidden() {
-        
-    
-    
-    
-//         $('#grow-me').addClass('big');
-//         $('#shrink-me').removeClass('big');
-//         console.log($('li'));
-//         $('.link').attr('href', 'https://www.example.com');
-//         $('.link').text('somewhere');
-//         $('#hide-me').css('display', 'none');
-//         $('#show-me').css('display', 'block');
-    
-//         $('#name').insertBefore('Welcome');
-        
-//     }$("#action").on("click", hidden);
-        
-    
-//     });    
   
+  
+// this is the curser for the millenium falcon
 var div = document.getElementById('falcon');
 			document.addEventListener('mousemove',function(e) {			
 				div.style.left = e.pageX+"px";
 				div.style.top = e.pageY+"px";
-			});
+            });
+            
+
+// this is the function for the pop up & 
+// to decide either to be lightside or darkside
+// starts game
+$(document).ready(() => {    
+
+    var id = '#dialog';
+
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
+          
+    //Set the popup window to center of screen
+    $(id).css('top',  winH/2-$(id).height()/2);
+    $(id).css('left', winW/2-$(id).width()/2);
+
+    //transition effect
+    $('#dialog').fadeIn(2000); 	
+
+//if lightside button is clicked
+$('#lightside').click(function (e) {   
+    $('.window').css('display', 'none');
+    $('#falcon').css('display', 'none');
+
+    console.log(`Game Starting, 30 second delay started`); 
+        //function to delay start of game by 30 seconds
+        setTimeout(delayStart, 5000);
+        //Countdown 30 second timer before game start
+        setInterval(delayTimer, 1000);
+        $('.light-container').css('display', 'flex');
+        $('.Reset').css('display', 'block');
+
+        // $('#form').attr('class', 'show');
+
+        flipCards($('.flip-card'));
+
+});		
+	
+
+//if darkside button is clicked
+$('#darkside').click(function (e) {
+    
+    $('#mask').css('display', 'none');
+    $('.window').css('display', 'none');
+    $('#falcon').css('display', 'none');
+    console.log(`Game Starting, 30 second delay started`); 
+        //function to delay start of game by 30 seconds
+        setTimeout(delayStart, 5000);
+        //Countdown 30 second timer before game start
+        setInterval(delayTimer, 1000);
+        $('.dark-container').css('display', 'flex');
+        $('.Reset').css('display', 'flex');
+
+        // $('#form').attr('class', 'show');
+
+        flipCards($('.flip-card'));
+        
+
+});	
+
+	
 
 });
+
+});
+
+
+
+
+// $(document).ready(function(){
+//     setTimeout(function(){
+//        PopUp();
+//     },5000); // 5000 to load it after 5 seconds from page load
+    // });

@@ -34,8 +34,11 @@ body {
     width: auto;  
 }
 
+
+
 /* this is the main header, positioned relative to page */
 .name {
+    position: relative;
     font-family: "Starjhol";
     color: rgb(233, 191, 3);
     font-size: 60px;
@@ -64,7 +67,16 @@ video {
 
 
 /* this is the new parent to flex the cards within */
-.card-container {
+.light-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.dark-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -137,7 +149,6 @@ with the transform property. */
 to an element. This property allows you to rotate, 
 scale, move, skew, etc., elements.
 Defines a 3D rotation along the Y-axis 
-
 .active triggers the event click in the js file */
 .flip-card.active .flip-card-inner {
     transform: rotateY(180deg);
@@ -147,7 +158,6 @@ Defines a 3D rotation along the Y-axis
 or not the back face of an element should be visible 
 when facing the user.  The back face of an element 
 is a mirror image of the front face being displayed.
-
 This property is useful when an element is rotated. 
 It lets you choose if the user should see the back face or not. */
 .flip-card-front, .flip-card-back {
@@ -174,6 +184,7 @@ It lets you choose if the user should see the back face or not. */
     width: auto 0;
     display: flex;
     justify-content: center;
+    
 
 }
 
@@ -200,7 +211,7 @@ button {
     margin-top: 10px; 
 }
 
-.card-container {
+.light-container {
     margin-top: 5px;
 }
 
@@ -230,17 +241,72 @@ input {
 
 
     /* positioned relative to its normal position. Needed to
-    add this to have button and video work */
+    add this to have cards flip */
 body {
     position: relative;
 }
 
-/* added a fun curser and used getElementById / event listener
- mousemove to move along the Y and X axes
- 
-The z-index property specifies the stack order of an element.
+
+#popup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+    z-index: inherit;
+}
+
+
+/*The z-index property specifies the stack order of an element.
 An element with greater stack order is always in front of an 
-element with a lower stack order.*/
+element with a lower stack order. This will go behind curser*/
+.window {
+    position:absolute;
+    left:0;
+    top:50;
+    display:none;
+    z-index:2;
+    padding:20px;
+    text-align: center;
+}
+
+#dialog {
+    align-content: center;  
+    background-color:rgba(0, 0, 0, 0.842);
+    margin-top: 30px;
+    width:700px; 
+    height: 700px;
+    padding:10px;
+}
+
+#path {
+    font-family: "Starjedi";
+    text-align: center;
+    color:rgb(233, 191, 3);
+    font-size: 50px;
+}
+
+.light-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.light {
+    background-image: url("obi.gif");
+    width: 200px;
+    height: 120px;
+}
+
+.dark {
+    background-image: url("darthvader.gif");
+    width: 200px;
+    height: 200px;
+}
+
+/* added a fun curser and used getElementById / event listener
+ mousemove to move along the Y and X axes*/
 #falcon {
     background-image: url("falcon2.png");
     position: absolute;
@@ -248,12 +314,12 @@ element with a lower stack order.*/
     left: 0;
     width: 450px;
     height: 450px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .page-title {
     background-color: black;
-    position: relative;
+    position: sticky;
 }
 
 .name {
@@ -281,7 +347,12 @@ video {
     position: relative;
 }
 
-.card-container {
+.light-container {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.dark-container {
     margin-top: 20px;
     padding: 10px;
 }
@@ -300,7 +371,7 @@ input {
     height: 200px;
 }
     
-    .flip-card-back {
+.flip-card-back {
     width: 200px;
     height: 200px;
 }
@@ -311,13 +382,24 @@ input {
 .Start-Reset {
     width: auto 0;
     display: flex;
-    margin-left: 110px;
-    justify-content: flex-start;
-}
+    justify-content: center;
 
-button { 
+
+}
+    
+#Reset {
+    display: none;
     width: 200px;
     height: 90px;
     margin: 5px;
+    font-size: 25px;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
 }
+
+ 
+
+
 }

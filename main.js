@@ -275,7 +275,6 @@ $(() => {
         $('.end-video1').css('display', 'none');
         $('.end-video2').css('display', 'none');  
         $('.Start-Reset').css('display', 'none');
-        $('.timer').css('display', 'none');
 
   
         //resets game won to false

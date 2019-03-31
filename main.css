@@ -497,6 +497,10 @@ input {
     font-size: 40px;
  }
 
+video {
+    display: flex;
+}
+
 .end-video1 {
     display: none;
     justify-content: center;

@@ -125,8 +125,66 @@ $(() => {
 
 
    
+// this is the function for the pop up & 
+// to decide either to be lightside or darkside
+// starts game
+$(document).ready(() => {    
 
+    var id = '#dialog';
+
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
+          
+    //Set the popup window to center of screen
+    $(id).css('top',  winH/2-$(id).height()/2);
+    $(id).css('left', winW/2-$(id).width()/2);
+
+    //transition effect
+    $('#dialog').fadeIn(2000); 	
+
+//if lightside button is clicked
+$('#lightside').click(function (e) {   
+    $('.window').css('display', 'none');
+    $('#falcon').css('display', 'none');
+
+    console.log(`Game Starting, 30 second delay started`); 
+        //function to delay start of game by 30 seconds
+        setTimeout(delayStart, 5000);
+        //Countdown 30 second timer before game start
+        setInterval(delayTimer, 1000);
+        $('.light-container').css('display', 'flex');
+        $('.Reset').css('display', 'block');
+
+        flipCards($('.flip-card'));
+
+});		
+	
+
+//if darkside button is clicked
+$('#darkside').click(function (e) {
     
+    $('#mask').css('display', 'none');
+    $('.window').css('display', 'none');
+    $('#falcon').css('display', 'none');
+    console.log(`Game Starting, 30 second delay started`); 
+        //function to delay start of game by 30 seconds
+        setTimeout(delayStart, 5000);
+        //Countdown 30 second timer before game start
+        setInterval(delayTimer, 1000);
+        $('.dark-container').css('display', 'flex');
+        $('.Reset').css('display', 'block');
+
+        flipCards($('.flip-card'));
+        
+
+});	
+
+	
+
+});
+
+
 
     //reset game
     $(`#Reset`).on(`click`, (e) => {
@@ -161,68 +219,6 @@ var div = document.getElementById('falcon');
             });
             
 
-// this is the function for the pop up & 
-// to decide either to be lightside or darkside
-// starts game
-$(document).ready(() => {    
-
-    var id = '#dialog';
-
-    //Get the window height and width
-    var winH = $(window).height();
-    var winW = $(window).width();
-          
-    //Set the popup window to center of screen
-    $(id).css('top',  winH/2-$(id).height()/2);
-    $(id).css('left', winW/2-$(id).width()/2);
-
-    //transition effect
-    $('#dialog').fadeIn(2000); 	
-
-//if lightside button is clicked
-$('#lightside').click(function (e) {   
-    $('.window').css('display', 'none');
-    $('#falcon').css('display', 'none');
-
-    console.log(`Game Starting, 30 second delay started`); 
-        //function to delay start of game by 30 seconds
-        setTimeout(delayStart, 5000);
-        //Countdown 30 second timer before game start
-        setInterval(delayTimer, 1000);
-        $('.light-container').css('display', 'flex');
-        $('.Reset').css('display', 'block');
-
-        // $('#form').attr('class', 'show');
-
-        flipCards($('.flip-card'));
-
-});		
-	
-
-//if darkside button is clicked
-$('#darkside').click(function (e) {
-    
-    $('#mask').css('display', 'none');
-    $('.window').css('display', 'none');
-    $('#falcon').css('display', 'none');
-    console.log(`Game Starting, 30 second delay started`); 
-        //function to delay start of game by 30 seconds
-        setTimeout(delayStart, 5000);
-        //Countdown 30 second timer before game start
-        setInterval(delayTimer, 1000);
-        $('.dark-container').css('display', 'flex');
-        $('.Reset').css('display', 'flex');
-
-        // $('#form').attr('class', 'show');
-
-        flipCards($('.flip-card'));
-        
-
-});	
-
-	
-
-});
 
 });
 

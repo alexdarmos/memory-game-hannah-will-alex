@@ -376,17 +376,8 @@ input {
     height: 200px;
 }
 
-    /* in desktop you'll see this to the left,
-    but in js I repositioned to center for mobile
-    by adding a new property when start is clicked */
-.Start-Reset {
-    width: auto 0;
-    display: flex;
-    justify-content: center;
-
-
-}
-    
+ 
+/* this will appear after side is chosen     */
 #Reset {
     display: none;
     width: 200px;
@@ -396,7 +387,6 @@ input {
     background-color: black;
     color: rgb(233, 191, 3);
     font-family: "Starjedi";
-    text-align: center;
 }
 
  

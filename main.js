@@ -10,126 +10,121 @@ $(() => {
     let cardsMatched = 0;
     let gameWon = false;
 
-    //
-    // $(`.flip-card-inner`).on(`click`, (e) => {
-    //     var audio = document.getElementById("audio");
-    //     audio.play();
-    // });
 
+//displays timer in the DOM
+function domTimer() {
+    $(`.timer`).text(`Timer: ${totalMinutes}:${totalSeconds}`);
+};
 
-    //displays timer in the DOM
-    function domTimer() {
-        $(`.timer`).text(`Timer: ${totalMinutes}:${totalSeconds}`);
-    };
+//displays the count down timer in DOM
+function domCountDown() {
+    $(`.timer`).text(`Game Begins in: ${countDown} Seconds`);
+}
 
-    //displays the count down timer in DOM
-    function domCountDown() {
-        $(`.timer`).text(`Game Begins in: ${countDown} Seconds`);
+//Keeps track of time it takes user to complete game
+//called in the delayStart function to start clock
+function setTime() {
+    //increments timer
+    ++totalSeconds;
+    //temporarily stops timer at 5 seconds for my sanity
+    if (totalSeconds === 59) {
+        totalMinutes += 1;
+        totalSeconds = 0;
     }
 
-    //Keeps track of time it takes user to complete game
-    //called in the delayStart function to start clock
-    function setTime() {
-        //increments timer
-        ++totalSeconds;
-        //temporarily stops timer at 5 seconds for my sanity
-        if (totalSeconds === 59) {
-            totalMinutes += 1;
-            totalSeconds = 0;
-        }
+    //stops timer when game is won
+    if (gameWon === true) {
+        return;
+    }
+    //calls function to display timer in DOM
+    domTimer();
+};
 
-        //stops timer when game is won
-        if (gameWon === true) {
-            return;
-        }
-        //calls function to display timer in DOM
-        domTimer();
-    };
+//function to start game after 30 seconds- gives user time to memorize cards before they flip
+function delayStart() {
+    flag = true;
+    clickCount = 0;
 
-    //function to start game after 30 seconds- gives user time to memorize cards before they flip
-    function delayStart() {
-        flag = true;
+    //event listener to flip card animation on click
+    $('.flip-card').click(function () {
+        $(this).toggleClass('active');
+    });
+
+    //start in-game timer
+    interval = setInterval(setTime, 1000);
+    //flip cards back to hidden
+    flipCards($('.flip-card'));
+};
+
+//function to decrement count down timer
+function countDownTimer() {
+    if (countDown != 0) {
+        --countDown;
+    } else {
+        //when timer hits 0, exits function (avoids infinite counting)
+        return;
+    }
+    //calls function to insert countdown timer into DOM
+    domCountDown();
+};
+
+//compares cards based on the src, finds correctly matching cards
+function compareCards(e) {
+    //track number of clicks
+    ++clickCount;
+    //limit click count to 2
+    while (clickCount > 2) {
         clickCount = 0;
-
-        //event listener to flip card animation on click
-        $('.flip-card').click(function () {
-            $(this).toggleClass('active');
-        });
-
-        //start in-game timer
-        interval = setInterval(setTime, 1000);
-        //flip cards back to hidden
-        flipCards($('.flip-card'));
-    };
-
-    //function to decrement count down timer
-    function countDownTimer() {
-        if (countDown != 0) {
-            --countDown;
-        } else {
-            //when timer hits 0, exits function (avoids infinite counting)
-            return;
-        }
-        //calls function to insert countdown timer into DOM
-        domCountDown();
-    };
-
-    //compares cards based on the src, finds correctly matching cards
-    function compareCards(e) {
-        //track number of clicks
         ++clickCount;
-        //limit click count to 2
-        while (clickCount > 2) {
-            clickCount = 0;
-            ++clickCount;
-        }
+    }
 
-        //flag checks if game has started
-        if (flag === true) {
+//flag checks if game has started
+if (flag === true) {
 
-            //sets the first selected card to variable
-            if (clickCount === 1) {
-                console.log(e);
+    //sets the first selected card to variable
+if (clickCount === 1) {
+    console.log(e);
+    cardOne = e.currentTarget.children[1].firstElementChild.attributes[1].nodeValue;
+    console.log(cardOne);
+    selectedCardOne = e.delegateTarget.offsetParent;
+//sets the second selected card to variable
 
-                cardOne = e.currentTarget.children[1].firstElementChild.attributes[1].nodeValue;
+} else {
+    cardTwo = e.currentTarget.children[1].firstElementChild.attributes[1].nodeValue;
 
-                console.log(cardOne);
+    selectedCardTwo = e.delegateTarget.offsetParent;
+// selectedCardTwoAccurate = e.delegateTarget .offsetParent.className;
 
-                selectedCardOne = e.delegateTarget.offsetParent;
-            //sets the second selected card to variable
-            } else {
-                cardTwo = e.currentTarget.children[1].firstElementChild.attributes[1].nodeValue;
+}
+//checks cards for match, mismatch, or duplicate selection
+if (clickCount === 2) {
+    if (selectedCardOne != selectedCardTwo) {   
+        if (cardOne === cardTwo) {
+        cardsMatched++;
+} else {
+    //flips cards back to hidden after 1 second delay
+    setTimeout(() => {
+        flipCards(selectedCardOne);
+        flipCards(selectedCardTwo);
+    }, 1000);
+}
+} else {
+alert(`Can't select the same card!`);
+}
+}
 
-                selectedCardTwo = e.delegateTarget.offsetParent;
+} else {
+    console.log(`game has not started`);
+}
+//Check to see if the user has won the game
+if (cardsMatched === 5) {
+    gameWon = true;
+    console.log("You won the game!")
+    $('.end-video1').css('display', 'flex');
+    $('.dark-container').css('display', 'none');
+    $('.light-container').css('display', 'none');
 
-                // selectedCardTwoAccurate = e.delegateTarget .offsetParent.className;
-
-            }
-            //checks cards for match, mismatch, or duplicate selection
-            if (clickCount === 2) {
-                if (selectedCardOne != selectedCardTwo) {
-                    if (cardOne === cardTwo) {
-                        cardsMatched++;
-                    } else {
-                        //flips cards back to hidden after 1 second delay
-                        setTimeout(() => {
-                            flipCards(selectedCardOne);
-                            flipCards(selectedCardTwo);
-                        }, 1000);
-                    }
-                } else {
-                    alert(`Can't select the same card!`);
-                }
-            }
-
-        } else {
-            console.log(`game has not started`);
-        }
-        //Check to see if the user has won the game
-        if (cardsMatched === 5) {
-            gameWon = true;
-            console.log("You won the game!")
-        }
+}
     };
 
     //function to flip all cards at beginning
@@ -187,7 +182,8 @@ $('#lightside').click(function (e) {
     timeout = setInterval(countDownTimer, 1000);
 
     $('.card-container').css('display', 'flex');
-    $('.opening-video').css('display', 'none');
+    $('.end-video1').css('display', 'none');
+    $('.end-video2').css('display', 'none');
     //flip cards to memorize
     flipCards($('.flip-card'));
     //prevents user from selecting cards before game starts
@@ -217,7 +213,8 @@ $('#darkside').click(function (e) {
     timeout = setInterval(countDownTimer, 1000);
 
     $('.card-container').css('display', 'flex');
-    $('.opening-video').css('display', 'none');
+    $('.end-video1').css('display', 'none');
+    $('.end-video2').css('display', 'none');
     //flip cards to memorize
     flipCards($('.flip-card'));
     //prevents user from selecting cards before game starts
@@ -230,63 +227,65 @@ $('#darkside').click(function (e) {
 
 });	
 
-   
+
 
 //reset game event listener
-    $(`#Reset`).on(`click`, (e) => {
-        //pause timer
-        clearInterval(interval);
-        //pause countdown
-        clearInterval(timeout);
-        //reset timer
-        totalSeconds = 0;
-        totalMinutes = 0;
-        cardsMatched = 0;
-        //reset timer in dom
-        domTimer();
-        //flip the cards again
-        flipCards($(`.flip-card`));
-        //reset count down
-        countDown = 5;
-        //re=displays countdown in dom
-        domCountDown();
-        //enables start button
-        $(`#Start`).attr("disabled", false);
-        //disableds reset button
-        $(`#Reset`).attr("disabled", true);
-        //brings up game choice for dark/light
-        $('#popup').css('display', 'flex');
-        //hides previous selected cards
-        $('.dark-container').css('display', 'none');
-        $('.light-container').css('display', 'none');
-        //resets game won to false
-        gameWon = false;
-
-
-        
-
-    });
+$(`#Reset`).on(`click`, (e) => {
+    //pause timer
+    clearInterval(interval);
+    //pause countdown
+    clearInterval(timeout);
+    //reset timer
+    totalSeconds = 0;
+    totalMinutes = 0;
+    cardsMatched = 0;
+    //reset timer in dom
+    domTimer();
+    //flip the cards again
+    flipCards($(`.flip-card`));
+    //reset count down
+    countDown = 5;
+    //re=displays countdown in dom
+    domCountDown();
+    //enables start button
+    $(`#Start`).attr("disabled", false);
     //disableds reset button
     $(`#Reset`).attr("disabled", true);
+    //brings up game choice for dark/light
+    $('#popup').css('display', 'flex');
+    //hides previous selected cards
+    $('.dark-container').css('display', 'none');
+    $('.light-container').css('display', 'none');
+    $('.end-video1').css('display', 'none');
+    $('.end-video2').css('display', 'none');    
+    //resets game won to false
+    gameWon = false;
 
-    //event listener for user card selection
-    $(`.flip-card-inner`).on(`click`, (e) => {
-        //compare cards on click
-        compareCards(e);
 
-        //plays audio on click
-        // var audio = document.getElementById("audio");
-        // audio.play();
-    });
+    
+
+});
+//disableds reset button
+$(`#Reset`).attr("disabled", true);
+
+//event listener for user card selection
+$(`.flip-card-inner`).on(`click`, (e) => {
+    //compare cards on click
+    compareCards(e);
+
+    //plays audio on click
+    // var audio = document.getElementById("audio");
+    // audio.play();
+});
 
 
 // this is the curser for the millenium falcon
 var div = document.getElementById('falcon');
-			document.addEventListener('mousemove',function(e) {			
-				div.style.left = e.pageX+"px";
-				div.style.top = e.pageY+"px";
-            });
-            
+    document.addEventListener('mousemove',function(e) {			
+        div.style.left = e.pageX+"px";
+        div.style.top = e.pageY+"px";
+    });
+    
 });
 
 

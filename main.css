@@ -461,7 +461,32 @@ input {
     height: 200px;
 }
 
- 
+ .winner {
+    color: rgb(233, 191, 3);
+    background-color: black;
+    font-family: "Starjedi";
+    text-align: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 20px;
+    font-size: 40px;
+ }
+
+.end-video1 {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+   }
+
+   .end-video2 {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+   }
 
 
 /* this will appear after side is chosen     */

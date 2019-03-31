@@ -9,34 +9,48 @@
 </head>
 <body>
 
+
+
+
+
+        <div id="falcon"></div>
+    
     <div class="main-container">
-            <div class="Game-title">
+        <div class ="page-title">
             <h1 class="name"><strong>StarWars Memory game</strong></h1>
-            </div>
+        </div>
             <div class="timer">
                     <div class="seconds"></div>
                     <div class="minutes"></div>
-                    </div>
-    <div class="opening-video">
+              </div>
+    <!-- <div class="opening-video"> -->
         
-        <video controls>
+        <!-- <video controls>
             <source src="StarWarsIntroHD1080p.mp4" type="video/mp4">
             <source src="StarWarsIntroHD1080p.ogg" type="video/ogg">
   </video>
-        
-    </div>                
+         -->
+    <!-- </div>                 
 
-    <div class="card-container" id="hide" style="display: none;">
+    <!-- setting the cards to hide, then activating in js
+    by using the click function and adding a css to show -->
+    <div class="light-container" id="hide" style="display: none;">
         
+<<<<<<< HEAD
             <div class="card">
             <div class="flip-card" id="card-1">
             <div class="flip-card-inner"  value="PLAY">
             <audio id="audio" src="There is no try.mp3" ></audio>
+=======
+            <div class="card" id="card-1">
+            <div class="flip-card">
+            <div class="flip-card-inner"  value="PLAY"  onclick="play()">
+>>>>>>> hannah
             <div class="flip-card-front">
             <h2>STARWARS</h2>
             </div>
             <div class="flip-card-back">
-            <input type= "image" src="lukegif.gif" alt="Avatar" 
+            <input type= "image" src="yoda.gif" alt="Avatar" 
             name="saveForm" class="btTxt submit" id="saveForm"">
                 </div>
             </div>
@@ -46,7 +60,6 @@
         <div class="card">
             <div class="flip-card" id="card-2">
                     <div class="flip-card-inner"  value="PLAY">
-                            <audio id="audio" src="There is no try.mp3" ></audio>
                         <div class="flip-card-front">
                         <h2>STARWARS</h2>
                         </div>
@@ -62,7 +75,6 @@
         <div class="card">
             <div class="flip-card" id="card-3">
             <div class="flip-card-inner"  value="PLAY" >
-            <audio id="audio" src="There is no try.mp3" ></audio>
             <div class="flip-card-front">
             <h2>STARWARS</h2>
             </div>
@@ -76,12 +88,11 @@
         <div class="card">
             <div class="flip-card" id="card-4">
             <div class="flip-card-inner"  value="PLAY"  >
-            <audio id="audio" src="There is no try.mp3" ></audio>
             <div class="flip-card-front">
             <h2>STARWARS</h2>
             </div>
             <div class="flip-card-back">
-            <input type= "image" src="darthvader.gif" alt="Avatar" 
+            <input type= "image" src="lightsaber.gif" alt="Avatar" 
             name="saveForm" class="btTxt submit" id="saveForm"">
 
                 </div>
@@ -93,7 +104,6 @@
         <div class="card">
             <div class="flip-card" id="card-5">
             <div class="flip-card-inner"  value="PLAY" >
-            <audio id="audio" src="There is no try.mp3" ></audio>
             <div class="flip-card-front">
             <h2>STARWARS</h2>
             </div>
@@ -107,7 +117,6 @@
         <div class="card">
             <div class="flip-card" id="card-6">
             <div class="flip-card-inner"  value="PLAY" >
-            <audio id="audio" src="There is no try.mp3" ></audio>
             <div class="flip-card-front">
             <h2>STARWARS</h2>
             </div>
@@ -125,7 +134,6 @@
         <div class="card">
                 <div class="flip-card" id="card-7">
                 <div class="flip-card-inner"  value="PLAY"  >
-                <audio id="audio" src="There is no try.mp3" ></audio>
                 <div class="flip-card-front">
                 <h2>STARWARS</h2>
                 </div>
@@ -143,7 +151,6 @@
             <div class="card">
                 <div class="flip-card" id="card-8">
                 <div class="flip-card-inner"  value="PLAY" >
-                <audio id="audio" src="There is no try.mp3" ></audio>
                 <div class="flip-card-front">
                 <h2>STARWARS</h2>
                 </div>
@@ -160,12 +167,11 @@
             <div class="card">
                 <div class="flip-card" id="card-9">
                 <div class="flip-card-inner"  value="PLAY" >
-                <audio id="audio" src="There is no try.mp3" ></audio>
                 <div class="flip-card-front">
                 <h2>STARWARS</h2>
                 </div>
                 <div class="flip-card-back">
-                <input type= "image" src="lukegif.gif" alt="Avatar" 
+                <input type= "image" src="yoda.gif" alt="Avatar" 
                 name="saveForm" class="btTxt submit" id="saveForm"">
     
                     </div>
@@ -175,12 +181,11 @@
             <div class="card">
                 <div class="flip-card" id="card-10">
                 <div class="flip-card-inner"  value="PLAY" >
-                <audio id="audio" src="There is no try.mp3" ></audio>
                 <div class="flip-card-front">
                 <h2>STARWARS</h2>
                 </div>
                 <div class="flip-card-back">
-                <input type= "image" src="darthvader.gif" alt="Avatar" 
+                <input type= "image" src="lightsaber.gif" alt="Avatar" 
                 name="saveForm" class="btTxt submit" id="saveForm"">
     
                     </div>
@@ -202,18 +207,217 @@
 
 
 
-           
-  
-        <br></br>
-        <div class = "Start-Reset">
-          <button type="button" id = "Start" class = "Start">Start Game</button>
-          <button type="button" id = "Reset" class = "Reset">Reset Game</button>
+
+
+
+
+
+    <div class="dark-container" id="hide" style="display: none;">
+        
+            <div class="card" id="card-1">
+            <div class="flip-card">
+            <div class="flip-card-inner"  value="PLAY"  onclick="play()">
+            <div class="flip-card-front">
+            <h2>STARWARS</h2>
+            </div>
+            <div class="flip-card-back">
+            <input type= "image" src="forseen.webp" alt="Avatar" 
+            name="saveForm" class="btTxt submit" id="saveForm"">
+
+                </div>
+            </div>
         </div>
+    </div>
+        
+        <div class="card" id="card-2">
+            <div class="flip-card">
+                    <div class="flip-card-inner"  value="PLAY">
+                        <div class="flip-card-front">
+                        <h2>STARWARS</h2>
+                        </div>
+                        <div class="flip-card-back">
+                        <input type= "image" src="trooper.gif" alt="Avatar" 
+                        name="saveForm" class="btTxt submit" id="saveForm"">
+    
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card-3">
+            <div class="flip-card">
+            <div class="flip-card-inner"  value="PLAY" >
+            <div class="flip-card-front">
+            <h2>STARWARS</h2>
+            </div>
+            <div class="flip-card-back">
+            <input type= "image" src="forseen.webp" alt="Avatar" 
+            name="saveForm" class="btTxt submit" id="saveForm"">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="card" id="card-4">
+            <div class="flip-card">
+            <div class="flip-card-inner"  value="PLAY"  >
+            <div class="flip-card-front">
+            <h2>STARWARS</h2>
+            </div>
+            <div class="flip-card-back">
+            <input type= "image" src="darthvader.gif" alt="Avatar" 
+            name="saveForm" class="btTxt submit" id="saveForm"">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+            
+        <div class="card" id="card-5">
+            <div class="flip-card">
+            <div class="flip-card-inner"  value="PLAY" >
+            <div class="flip-card-front">
+            <h2>STARWARS</h2>
+            </div>
+            <div class="flip-card-back">
+            <input type= "image" src="trooper.gif" alt="Avatar" 
+            name="saveForm" class="btTxt submit" id="saveForm"">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="card" id="card-6">
+            <div class="flip-card">
+            <div class="flip-card-inner"  value="PLAY" >
+            <div class="flip-card-front">
+            <h2>STARWARS</h2>
+            </div>
+            <div class="flip-card-back">
+            <input type= "image" src="force.gif" alt="Avatar" 
+            name="saveForm" class="btTxt submit" id="saveForm"">
+
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    
+
+        <div class="card" id="card-7">
+                <div class="flip-card">
+                <div class="flip-card-inner"  value="PLAY"  >
+                <div class="flip-card-front">
+                <h2>STARWARS</h2>
+                </div>
+                <div class="flip-card-back">
+                <input type= "image" src="force.gif" alt="Avatar" 
+                name="saveForm" class="btTxt submit" id="saveForm"">
+    
+                    </div>
+                </div>
+            </div>
+        </div> 
+            
+    
+            
+            <div class="card" id="card-8">
+                <div class="flip-card">
+                <div class="flip-card-inner"  value="PLAY" >
+                <div class="flip-card-front">
+                <h2>STARWARS</h2>
+                </div>
+                <div class="flip-card-back">
+                <input type= "image" src="starship.gif" alt="Avatar" 
+                name="saveForm" class="btTxt submit" id="saveForm"">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+            <div class="card" id="card-9">
+                <div class="flip-card">
+                <div class="flip-card-inner"  value="PLAY" >
+                <div class="flip-card-front">
+                <h2>STARWARS</h2>
+                </div>
+                <div class="flip-card-back">
+                <input type= "image" src="starship.gif" alt="Avatar" 
+                name="saveForm" class="btTxt submit" id="saveForm"">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="card" id="card-10">
+                <div class="flip-card">
+                <div class="flip-card-inner"  value="PLAY" >
+                <div class="flip-card-front">
+                <h2>STARWARS</h2>
+                </div>
+                <div class="flip-card-back">
+                <input type= "image" src="darthvader.gif" alt="Avatar" 
+                name="saveForm" class="btTxt submit" id="saveForm"">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+
+
+    </div>
+
+
+
+    <div class = "Start-Reset">
+            <button type="button" id = "Reset" class = "Reset">Reset Game</button>
+          </div>  
+    
+    </div>
+           
+<div id="popup">
+        <div id="dialog" class="window">
+        <div id="header">
+                <h1 id="path">Which Path will you Decide?</h1>
+            </div>
+        <div class="light-dark">
+            <div class="light">
+                <img id ="obi" src="obi.gif">
+            </div>
+            <div class="dark">
+                <img id ="vader" src="darthvader.gif"> 
+            </div>
+        </div>
+            <div class="input-container">
+            <button type="button" id="lightside" value="PLAY">Lightside
+            <audio id="audio" src="Help me Obi Wan.mp3" ></audio>
+
+            </button>
+            <button type="button" id="darkside" value="PLAY">Darkside
+            <audio id="audio2" src="Dark Side.mp3" ></audio>
+            </button>
+    
+        </div>
+        </div>
+  
+       
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js">
+    </script>
 </body>
+
 </html>
 
 <!-- this is hannah -->

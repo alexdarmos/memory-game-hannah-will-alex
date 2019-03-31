@@ -1,5 +1,6 @@
 //document ready jquery
 $(() => {
+<<<<<<< HEAD
     //variables declared/initialized 
     let totalSeconds = 0;
     let totalMinutes = 0;
@@ -16,13 +17,30 @@ $(() => {
     //     audio.play();
     // });
 
+=======
+    let totalSeconds = 0;
+    let totalMinutes =0;
+    let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo;
+    let clickCount = 0;
+    let countDown = 5;
+   
+>>>>>>> hannah
 
     //displays timer in the DOM
     function domTimer() {
+<<<<<<< HEAD
         $(`.timer`).text(`Timer: ${totalMinutes}:${totalSeconds}`);
     };
 
     //displays the count down timer in DOM
+=======
+        // $(`.seconds`).text(`Seconds: ${totalSeconds}`);
+        // $(`.minutes`).text(`Minutes: ${totalMinutes}`);
+        $(`.timer`).text(`Timer: ${totalMinutes}:${totalSeconds}`);
+    };
+
+    //sets countdown timer in DOM
+>>>>>>> hannah
     function domCountDown() {
         $(`.timer`).text(`Game Begins in: ${countDown} Seconds`);
     }
@@ -60,18 +78,31 @@ $(() => {
         interval = setInterval(setTime, 1000);
         //flip cards back to hidden
         flipCards($('.flip-card'));
+<<<<<<< HEAD
+=======
+
+>>>>>>> hannah
     };
 
     //function to decrement count down timer
     function countDownTimer() {
         if (countDown != 0) {
             --countDown;
+<<<<<<< HEAD
+=======
+            // console.log(`Count Down: ${countDown}`);
+            
+>>>>>>> hannah
         } else {
             //when timer hits 0, exits function (avoids infinite counting)
             return;
+<<<<<<< HEAD
         }
         //calls function to insert countdown timer into DOM
         domCountDown();
+=======
+        }domCountDown();
+>>>>>>> hannah
     };
 
     //compares cards based on the src, finds correctly matching cards
@@ -83,6 +114,7 @@ $(() => {
             clickCount = 0;
             ++clickCount;
         }
+<<<<<<< HEAD
 
         //flag checks if game has started
         if (flag === true) {
@@ -123,6 +155,32 @@ $(() => {
             gameWon = true;
             console.log("You won the game!")
         }
+=======
+        // console.log(clickCount);
+        if(clickCount === 1) {
+            cardOne = e.currentTarget.children[2].lastElementChild.src;
+            console.log(cardOne);
+            console.log(e.delegateTarget.offsetParent);
+            selectedCardOne = e.delegateTarget.offsetParent;
+        } else {
+            
+            cardTwo = e.currentTarget.children[2].lastElementChild.src;
+            selectedCardTwo = e.delegateTarget.offsetParent;
+            console.log(cardTwo);
+        }
+
+        if( selectedCardOne != selectedCardTwo) {
+            if(clickCount === 2) {
+                if(cardOne === cardTwo) {
+                    console.log(`Match!`);
+                } else {
+                    console.log(`Mismatch!`);
+                }
+            }
+    }   else {
+        return;
+    }
+>>>>>>> hannah
     };
 
     //function to flip all cards at beginning
@@ -130,6 +188,7 @@ $(() => {
         $(target).toggleClass('active');
     };
 
+<<<<<<< HEAD
     //start button event listener
     $(`#Start`).on(`click`, (e) => {
         //function to delay start of game by 30 seconds
@@ -148,6 +207,103 @@ $(() => {
         //enables reset button
         $(`#Reset`).attr("disabled", false);
     });
+=======
+    function shuffle(array) {
+        let length = array.length;
+        let random;
+        let index;
+    
+    // While there are elements in the array
+        while (length > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * length);
+    // Decrease length by 1
+            length--;
+    // Swap the array elements 
+            random = array[length];
+            array[length] = array[index];
+            array[index] = random;
+        }
+        //Return a random element
+        return random;
+    }
+
+    //event listener to flip card animation on click
+    $('.flip-card').click(function() {
+        $(this).toggleClass('active');
+    });
+
+
+   
+// this is the function for the pop up & 
+// to decide either to be lightside or darkside
+// starts game
+$(document).ready(() => {    
+
+    var id = '#dialog';
+
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
+          
+    //Set the popup window to center of screen
+    //refresh with difference in screen size
+    //tried flexing in css, but ran into conflicts
+    // with it not appearing as a popup
+    $(id).css('top',  winH/2-$(id).height()/2);
+    $(id).css('left', winW/2-$(id).width()/2);
+
+    //transition effect
+    $('#dialog').fadeIn(3000); 	
+
+//if lightside button is clicked
+$('#lightside').click(function (e) {
+    
+    var audio = document.getElementById("audio");
+    audio.play();
+    $('#popup').css('display', 'none');   
+    $('#falcon').css('display', 'none');
+
+    console.log(`Game Starting, 30 second delay started`); 
+        //function to delay start of game by 30 seconds
+        setTimeout(delayStart, 5000);
+        //Countdown 30 second timer before game start
+        setInterval(delayTimer, 1000);
+        $('.light-container').css('display', 'flex');
+        $('.Reset').css('display', 'block');
+
+        flipCards($('.flip-card'));
+
+});		
+	
+
+//if darkside button is clicked
+$('#darkside').click(function (e) {
+    
+    var audio2 = document.getElementById("audio2");
+    audio2.play();
+
+    $('#popup').css('display', 'none');
+    $('#falcon').css('display', 'none');
+    console.log(`Game Starting, 30 second delay started`); 
+        //function to delay start of game by 30 seconds
+        setTimeout(delayStart, 5000);
+        //Countdown 30 second timer before game start
+        setInterval(delayTimer, 1000);
+        $('.dark-container').css('display', 'flex');
+        $('.Reset').css('display', 'block');
+
+        flipCards($('.flip-card'));
+        
+
+});	
+
+	
+
+});
+
+
+>>>>>>> hannah
 
     //reset game event listener
     $(`#Reset`).on(`click`, (e) => {
@@ -184,6 +340,7 @@ $(() => {
         // audio.play();
     });
 
+<<<<<<< HEAD
     // function shuffle(array) {
     //     let length = array.length;
     //     let random;
@@ -203,5 +360,27 @@ $(() => {
     //     //Return a random element
     //     return random;
     // }
+=======
+
+  
+  
+// this is the curser for the millenium falcon
+var div = document.getElementById('falcon');
+			document.addEventListener('mousemove',function(e) {			
+				div.style.left = e.pageX+"px";
+				div.style.top = e.pageY+"px";
+            });
+            
+
 
 });
+
+
+
+>>>>>>> hannah
+
+// $(document).ready(function(){
+//     setTimeout(function(){
+//        PopUp();
+//     },5000); // 5000 to load it after 5 seconds from page load
+    // });

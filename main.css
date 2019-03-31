@@ -1,9 +1,16 @@
+/* This is the smallest size for phones */
 * {
+<<<<<<< HEAD
   box-sizing: border-box;
    
+=======
+    box-sizing: border-box;  
+>>>>>>> hannah
 }
 
+/* font-face imports the font faster */
 @font-face {
+<<<<<<< HEAD
   font-family: "Starjhol";
   src: url(Starjhol.ttf) format("truetype");
   
@@ -13,8 +20,18 @@
   font-family: "Starjedi";
   src: url(Starjedi.ttf) format("truetype");
 
+=======
+    font-family: "Starjhol";
+    src: url(Starjhol.ttf) format("truetype");
 }
 
+@font-face {
+    font-family: "Starjedi";
+    src: url(Starjedi.ttf) format("truetype");
+>>>>>>> hannah
+}
+
+/* this was to fit background to entire screen and size accordingly */
 body {
   width: 100%;
   height: 100%;
@@ -26,6 +43,7 @@ body {
 }
 
 
+<<<<<<< HEAD
 .main-container {
   display: flex;
   flex-direction: column;
@@ -33,19 +51,110 @@ body {
   justify-content: center;
   width: auto;
   
+=======
+#popup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    z-index: inherit;
 }
 
 
-.Game-title {
+/*The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an 
+element with a lower stack order. This will go behind curser*/
+.window {
+    position:absolute;
+    display:none;
+    z-index:2;
+    padding:20px;
+    text-align: center;
+}
+
+#dialog {
+    align-content: center;  
+    background-color:rgba(0, 0, 0, 0.842);
+    margin-top: 10px;
+    width:300px; 
+    height: 300px;
+    padding:10px;
+    margin: auto;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+}
+
+#path {
+    font-family: "Starjedi";
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    color:rgb(233, 191, 3);
+    font-size: 40px;
+}
+
+.light-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#obi {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+>>>>>>> hannah
+}
+
+#vader {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+
+#lightside {
+    width: 130px;
+    height: 70px;
+    font-size: 20px;
+    margin: 5px;
     background-color: black;
-    
-    
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
+}
 
+#darkside {
+    width: 130px;
+    height: 70px;
+    font-size: 20px;
+    margin: auto;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
 }
 
 
 
+/* this is the parent container, display: flex set to help children containers */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: auto;  
+}
+
+
+
+/* this is the main header, positioned relative to page */
 .name {
+<<<<<<< HEAD
   font-family: "Starjhol";
   color: rgb(233, 210, 3);
   font-size: 60px;
@@ -53,15 +162,27 @@ body {
   text-align: center;
 
   
+=======
+    position: relative;
+    font-family: "Starjhol";
+    color: rgb(233, 191, 3);
+    font-size: 60px;
+    background-color: black;
+    text-align: center; 
+>>>>>>> hannah
 }
 
+/* mobile / tablet will not have a video option*/
 .opening-video {
-    display: flex;
-    justify-content: center;
+    display: none;
 }
 
+video {
+    display: none;  
+}
 
 .timer {
+<<<<<<< HEAD
   color: white;
   font-family: "Starjedi";
   background-color: rgba(0, 0, 0, 0.6);
@@ -83,23 +204,55 @@ body {
   
   
 
+=======
+    color: white;
+    font-family: "Starjedi";
+    background-color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 8px; 
 }
 
 
+/* this is the new parent to flex the cards within */
+.light-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 10px;
+>>>>>>> hannah
+}
+
+.dark-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 10px;
+}
 
 
-
+/* this child class grabs all the cards to position to center per flex */
 .card {
+<<<<<<< HEAD
   align-content: center;
   justify-content: center;
   margin: 5px;
 
 
+=======
+    align-content: center;
+    justify-content: center;
+    margin: 5px;
+>>>>>>> hannah
 }
 
 
-
+/* this is the back of the card details*/
 h2 {
+<<<<<<< HEAD
   font-family: "Starjhol";
   color: rgb(233, 210, 3);
   background-color: black;
@@ -173,207 +326,307 @@ button {
   font-family: "Starjedi";
   position: relative;
   text-align: center;
+=======
+    font-family: "Starjhol";
+    color: rgb(233, 191, 3);
+    background-color: black;
+    font-size: 18px;
+    text-align: center;
+    align-content: center;
+}
+
+
+/* The perspective property defines how far the 
+object is away from the user. So, a lower value will 
+result in a more intensive 3D effect than a higher value. */
+.flip-card {
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+}
+
+
+  /* this sizes all the gifs */
+input {
+    width: 90px;
+    height: 90px;
+}
+  
+
+/* 
+The transition property is a shorthand property for:
+transition-property
+transition-duration
+transition-timing-function
+transition-delay */
+
+/* The transform-style property specifies how nested 
+elements are rendered in 3D space.
+This property must be used together 
+with the transform property. */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+  
+
+  /* The transform property applies a 2D or 3D transformation 
+to an element. This property allows you to rotate, 
+scale, move, skew, etc., elements.
+Defines a 3D rotation along the Y-axis 
+.active triggers the event click in the js file */
+.flip-card.active .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* The backface-visibility property defines whether 
+or not the back face of an element should be visible 
+when facing the user.  The back face of an element 
+is a mirror image of the front face being displayed.
+This property is useful when an element is rotated. 
+It lets you choose if the user should see the back face or not. */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+  
+.flip-card-front {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.flip-card-back {
+    transform: rotateY(180deg);
+    width: 100px;
+    height: 100px;
+}
+
+
+
+.Start-Reset {
+    display: flex;
+    justify-content: center;
+}
+
+ 
+/* this will appear after side is chosen     */
+#Reset {
+    display: none;
+    width: 180px;
+    height: 90px;
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
 }
 
 
 
 
-
-  @media only screen and (max-width: 700px) {
-
-
-    * {
-        box-sizing: border-box;
-         
-    }
-    
-    @font-face {
-        font-family: "Starjhol";
-        src: url(Starjhol.ttf) format("truetype");
-        
-    }
-    
-    @font-face {
-        font-family: "Starjedi";
-        src: url(Starjedi.ttf) format("truetype");
-    
-    }
-    
-    body {
-        width: 100%;
-        height: 100%;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
-    }
-    
-    
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        width: auto;
-        
-    }
-    
-    
-    .Game-title {
-        background-color: black;
-        
-        
-    
-    }
-    
-    
-    
-    .name {
-        font-family: "Starjhol";
-        color: rgb(233, 210, 3);
-        font-size: 60px;
-        position: relative;
-        text-align: center;
-    
-        
-    }
-    
-    .opening-video {
-        display: flex;
-        justify-content: center;
-        width: 100px;
-        height: 80px;
-    }
-    
-    
-    .timer {
-        color: white;
-        font-family: "Starjedi";
-        background-color: rgba(0, 0, 0, 0.6);
-        width: auto;
-        text-align: center;
-        font-size: 30px;
-        margin-top: 50px;
-       
-        
-    }
-    
-    .card-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: auto;
-        margin-top: 50px;
-        padding: 10px;
-        
-        
-    
-    }
-    
-    
-    
-    
-    
-    .card {
-        align-content: center;
-        justify-content: center;
-        margin: 5px;
-    
-    
-    }
-    
-    
-    
-    h2 {
-        font-family: "Starjhol";
-        color: rgb(233, 210, 3);
-        background-color: black;
-        font-size: 20px;
-        text-align: center;
-        align-content: center;
-    }
-    
-    
-    
-    
-    .flip-card {
-        background-color: transparent;
-        width: 120px;
-        height: 120px;
-        perspective: 1000px;
-      }
-
-      input {
-        width: 120px;
-        height: 120px;
-    }
-    
-
-      
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      }
-      
-      .flip-card.active .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-      
-      .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-      }
-      
-      .flip-card-front {
-        background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-      }
-      
-      .flip-card-back {
-        background-color: #2980b9;
-        transform: rotateY(180deg);
-        z-index: 1;
-        
-      }
-    
-      .Start-Reset {
-        width: auto 0;
-        display: flex;
-        justify-content: center;
-        
-      }
-    
-      button {
-        
-        width: 800px;
-        height: 40px;
-        margin: 5px;
-        font-size: 20px;
-        background-color: black;
-        color: rgb(233, 210, 3);
-        font-family: "Starjedi";
-        position: relative;
-        text-align: center;
-    
-      }
+/* This size is for computer screens */
+  @media only screen and (min-width: 600px) {
 
 
+    /* positioned relative to its normal position. Needed to
+    add this to have cards flip */
+body {
+    position: relative;
+    
+}
 
 
+#popup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+    z-index: inherit;
+}
 
 
+/*The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an 
+element with a lower stack order. This will go behind curser*/
+.window {
+    position:absolute;
+    left:0;
+    top:50;
+    display:none;
+    z-index:2;
+    padding:20px;
+    text-align: center;
+}
+
+#dialog {
+    align-content: center;  
+    background-color:rgba(0, 0, 0, 0.842);
+    margin-top: 30px;
+    width:700px; 
+    height: 700px;
+    padding:10px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+>>>>>>> hannah
+}
+
+#path {
+    font-family: "Starjedi";
+    text-align: center;
+    color:rgb(233, 191, 3);
+    font-size: 50px;
+}
+
+.light-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#obi {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
+
+#vader {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
 
 
+#lightside {
+    width: 180px;
+    height: 90px;
+    margin: 10px;
+    font-size: 25px;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
+}
 
+#darkside {
+width: 180px;
+    height: 90px;
+    margin: 10px;
+    font-size: 25px;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+    text-align: center;
+}
+
+
+/* added a fun curser and used getElementById / event listener
+ mousemove to move along the Y and X axes*/
+#falcon {
+    background-image: url("falcon2.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 450px;
+    z-index: 3;
+}
+
+.page-title {
+    background-color: black;
+    position: sticky;
+}
+
+.name {
+    background-color: black;
+    font-size: 65px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    text-align: center;
+}
+
+.timer {
+    margin-top: 20px;
+    font-size: 30px; 
+}
+
+.opening-video {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+video {
+    display: flex;
+    position: relative;
+}
+
+.light-container {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.dark-container {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 30px;
+}
+    
+.flip-card {
+    width: 200px;
+    height: 200px;
+}
+
+input {
+    width: 200px;
+    height: 200px;
+}
+    
+.flip-card-back {
+    width: 200px;
+    height: 200px;
+}
+
+ 
+
+
+/* this will appear after side is chosen     */
+#Reset {
+    display: none;
+    justify-content: center;
+    width: 200px;
+    height: 90px;
+    margin: 5px;
+    font-size: 25px;
+    background-color: black;
+    color: rgb(233, 191, 3);
+    font-family: "Starjedi";
+}
+
+ 
+
+
+<<<<<<< HEAD
   }
+=======
+}
+>>>>>>> hannah

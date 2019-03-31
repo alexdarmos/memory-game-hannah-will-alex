@@ -151,7 +151,7 @@ video {
     width: auto;
     text-align: center;
     font-size: 30px;
-    margin-top: 50px; 
+    margin-top: 8px; 
 }
 
 
@@ -161,8 +161,7 @@ video {
     justify-content: center;
     flex-wrap: wrap;
     width: auto;
-    margin-top: 50px;
-    padding: 10px;
+    margin-top: 10px;
 }
 
 .dark-container {
@@ -170,8 +169,7 @@ video {
     justify-content: center;
     flex-wrap: wrap;
     width: auto;
-    margin-top: 50px;
-    padding: 10px;
+    margin-top: 10px;
 }
 
 
@@ -188,7 +186,7 @@ h2 {
     font-family: "Starjhol";
     color: rgb(233, 191, 3);
     background-color: black;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
     align-content: center;
 }
@@ -199,8 +197,8 @@ object is away from the user. So, a lower value will
 result in a more intensive 3D effect than a higher value. */
 .flip-card {
     background-color: transparent;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     perspective: 1000px;
 }
 
@@ -265,8 +263,8 @@ It lets you choose if the user should see the back face or not. */
   
 .flip-card-back {
     transform: rotateY(180deg);
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
 }
 
  
@@ -283,57 +281,11 @@ It lets you choose if the user should see the back face or not. */
     font-family: "Starjedi";
 }
 
-/* 
-button {
-    width: 180px;
-    height: 90px;
-    margin: 10px;
-    font-size: 25px;
-    background-color: black;
-    color: rgb(233, 191, 3);
-    font-family: "Starjedi";
-    text-align: center;
-  } */
 
-
-
-
-
-/* This is Small/medium size for tablets */
-@media only screen and (min-width: 500px) {
-
-
-.timer {
-    margin-top: 10px; 
-}
-
-.light-container {
-    margin-top: 5px;
-}
-
-h2 {
-    font-size: 20px;
-}
-
-.flip-card {
-    width: 150px;
-    height: 150px;
-}
-
-input {
-    width: 150px;
-    height: 150px;
-}
-  
-  .flip-card-back {
-    width: 150px;
-    height: 150px;
-}
-}
 
 
 /* This size is for computer screens */
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 500px) {
 
 
     /* positioned relative to its normal position. Needed to
@@ -375,6 +327,11 @@ element with a lower stack order. This will go behind curser*/
     width:700px; 
     height: 700px;
     padding:10px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
 }
 
 #path {

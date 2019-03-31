@@ -5,13 +5,7 @@ $(() => {
     let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo;
     let clickCount = 0;
     let countDown = 5;
-    
-    $(`.flip-card-inner`).on(`click`, (e) => {
-        var audio = document.getElementById("audio");
-        audio.play();
-        
-    });
-    
+   
 
     //sets timer in the DOM
     function domTimer() {
@@ -148,6 +142,9 @@ $(document).ready(() => {
 
 //if lightside button is clicked
 $('#lightside').click(function (e) {
+    
+    var audio = document.getElementById("audio");
+    audio.play();
     $('#popup').css('display', 'none');   
     $('#falcon').css('display', 'none');
 
@@ -166,6 +163,10 @@ $('#lightside').click(function (e) {
 
 //if darkside button is clicked
 $('#darkside').click(function (e) {
+    
+    var audio2 = document.getElementById("audio2");
+    audio2.play();
+
     $('#popup').css('display', 'none');
     $('#falcon').css('display', 'none');
     console.log(`Game Starting, 30 second delay started`); 

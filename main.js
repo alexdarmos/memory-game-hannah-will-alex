@@ -89,13 +89,20 @@ $(() => {
 
             //sets the first selected card to variable
             if (clickCount === 1) {
-                cardOne = e.currentTarget.children[2].lastElementChild.src;
+                console.log(e);
+
+                cardOne = e.currentTarget.children[1].firstElementChild.attributes[1].nodeValue;
+
+                console.log(cardOne);
+
                 selectedCardOne = e.delegateTarget.offsetParent;
             //sets the second selected card to variable
             } else {
-                cardTwo = e.currentTarget.children[2].lastElementChild.src;
+                cardTwo = e.currentTarget.children[1].firstElementChild.attributes[1].nodeValue;
+
                 selectedCardTwo = e.delegateTarget.offsetParent;
-                selectedCardTwoAccurate = e.delegateTarget.offsetParent.className;
+
+                // selectedCardTwoAccurate = e.delegateTarget .offsetParent.className;
 
             }
             //checks cards for match, mismatch, or duplicate selection
@@ -130,7 +137,18 @@ $(() => {
         $(target).toggleClass('active');
     };
 
-    
+
+    //event listener to flip card animation on click
+    $('.flip-card').click(function() {
+        $(this).toggleClass('active');
+    });
+
+
+   
+// this is the function for the pop up & 
+// to decide either to be lightside or darkside
+// starts game
+
     var id = '#dialog';
 
     //Get the window height and width
@@ -147,7 +165,10 @@ $(() => {
     //transition effect
     $('#dialog').fadeIn(3000); 	
 
-//if lightside button is clicked
+	
+    
+
+    //if lightside button is clicked
 $('#lightside').click(function (e) {
     
     var audio = document.getElementById("audio");
@@ -156,22 +177,27 @@ $('#lightside').click(function (e) {
     $('#falcon').css('display', 'none');
 
     console.log(`Game Starting, 30 second delay started`); 
-        //function to delay start of game by 30 seconds
-        setTimeout(delayStart, 5000);
-        //Countdown 30 second timer before game start
-        setInterval(delayTimer, 1000);
-        $('.light-container').css('display', 'flex');
-        $('.Reset').css('display', 'block');
+ 
+    $('.light-container').css('display', 'flex');
+    $('.Reset').css('display', 'block');
+    
+    //function to delay start of game by 30 seconds
+    setTimeout(delayStart, 5000);
+    //Countdown 30 second timer before game start
+    timeout = setInterval(countDownTimer, 1000);
 
-        flipCards($('.flip-card'));
-        //prevents user from selecting cards before game starts
-        $(`.flip-card`).unbind(`click`);
-        //disables start button while game is running
-        $(`#Start`).attr("disabled", true);
-        //enables reset button
-        $(`#Reset`).attr("disabled", false);
-});		
-	
+    $('.card-container').css('display', 'flex');
+    $('.opening-video').css('display', 'none');
+    //flip cards to memorize
+    flipCards($('.flip-card'));
+    //prevents user from selecting cards before game starts
+    $(`.flip-card`).unbind(`click`);
+    //disables start button while game is running
+    $(`#Start`).attr("disabled", true);
+    //enables reset button
+    $(`#Reset`).attr("disabled", false);
+});
+
 
 //if darkside button is clicked
 $('#darkside').click(function (e) {
@@ -181,40 +207,32 @@ $('#darkside').click(function (e) {
 
     $('#popup').css('display', 'none');
     $('#falcon').css('display', 'none');
-    console.log(`Game Starting, 30 second delay started`); 
-        //function to delay start of game by 30 seconds
-        setTimeout(delayStart, 5000);
-        //Countdown 30 second timer before game start
-        setInterval(delayTimer, 1000);
-        $('.dark-container').css('display', 'flex');
-        $('.Reset').css('display', 'block');
 
-        flipCards($('.flip-card'));
-        //prevents user from selecting cards before game starts
-        $(`.flip-card`).unbind(`click`);
-        //disables start button while game is running
-        $(`#Start`).attr("disabled", true);
-        //enables reset button
-        $(`#Reset`).attr("disabled", false);
+    $('.dark-container').css('display', 'flex');
+    $('.Reset').css('display', 'block');
+
+    //function to delay start of game by 30 seconds
+    setTimeout(delayStart, 5000);
+    //Countdown 30 second timer before game start
+    timeout = setInterval(countDownTimer, 1000);
+
+    $('.card-container').css('display', 'flex');
+    $('.opening-video').css('display', 'none');
+    //flip cards to memorize
+    flipCards($('.flip-card'));
+    //prevents user from selecting cards before game starts
+    $(`.flip-card`).unbind(`click`);
+    //disables start button while game is running
+    $(`#Start`).attr("disabled", true);
+    //enables reset button
+    $(`#Reset`).attr("disabled", false);
         
 
 });	
 
-	
-
-
-
- 
-// this is the curser for the millenium falcon
-var div = document.getElementById('falcon');
-			document.addEventListener('mousemove',function(e) {			
-				div.style.left = e.pageX+"px";
-				div.style.top = e.pageY+"px";
-            });
-       
    
 
-    //reset game event listener
+//reset game event listener
     $(`#Reset`).on(`click`, (e) => {
         //pause timer
         clearInterval(interval);
@@ -223,6 +241,7 @@ var div = document.getElementById('falcon');
         //reset timer
         totalSeconds = 0;
         totalMinutes = 0;
+        cardsMatched = 0;
         //reset timer in dom
         domTimer();
         //flip the cards again
@@ -235,6 +254,17 @@ var div = document.getElementById('falcon');
         $(`#Start`).attr("disabled", false);
         //disableds reset button
         $(`#Reset`).attr("disabled", true);
+        //brings up game choice for dark/light
+        $('#popup').css('display', 'flex');
+        //hides previous selected cards
+        $('.dark-container').css('display', 'none');
+        $('.light-container').css('display', 'none');
+        //resets game won to false
+        gameWon = false;
+
+
+        
+
     });
     //disableds reset button
     $(`#Reset`).attr("disabled", true);
@@ -249,7 +279,17 @@ var div = document.getElementById('falcon');
         // audio.play();
     });
 
+
+// this is the curser for the millenium falcon
+var div = document.getElementById('falcon');
+			document.addEventListener('mousemove',function(e) {			
+				div.style.left = e.pageX+"px";
+				div.style.top = e.pageY+"px";
+            });
+            
 });
+
+
 
     // function shuffle(array) {
     //     let length = array.length;
@@ -270,3 +310,9 @@ var div = document.getElementById('falcon');
     //     //Return a random element
     //     return random;
     // }
+
+// $(document).ready(function(){
+//     setTimeout(function(){
+//        PopUp();
+//     },5000); // 5000 to load it after 5 seconds from page load
+    // });

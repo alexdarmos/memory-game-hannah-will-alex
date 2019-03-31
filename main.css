@@ -135,14 +135,7 @@ element with a lower stack order. This will go behind curser*/
     text-align: center; 
 }
 
-/* mobile / tablet will not have a video option*/
-.opening-video {
-    display: none;
-}
 
-video {
-    display: none;  
-}
 
 .timer {
     color: white;
@@ -269,15 +262,58 @@ It lets you choose if the user should see the back face or not. */
 
 
 
-.Start-Reset {
-    display: flex;
+
+.winner {
+    color: rgb(233, 191, 3);
+    background-color: black;
+    font-family: "Starjedi";
+    text-align: center;
     justify-content: center;
+    align-content: center;
+    margin: 40px;
+    padding: 10px;
+    font-size: 30px;
+ }
+
+
+ video {
+     display: none;
+ }
+ 
+.end-video1 {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+    
+   }
+
+   .end-video2 {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+    
+
+   }
+
+
+
+
+.Start-Reset {
+    display: none;
+    justify-content: center;
+    margin-top: 20px;
 }
 
  
 /* this will appear after side is chosen     */
 #Reset {
-    display: none;
+    display: flex;
     width: 180px;
     height: 90px;
     margin: 10px;
@@ -420,17 +456,6 @@ width: 180px;
     font-size: 30px; 
 }
 
-.opening-video {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-video {
-    display: flex;
-    position: relative;
-}
 
 .light-container {
     margin-top: 20px;
@@ -478,6 +503,10 @@ input {
     align-content: center;
     flex-direction: column;
     margin: auto;
+    width: 800px;
+    height: 600px;
+    
+    
    }
 
    .end-video2 {
@@ -486,12 +515,14 @@ input {
     align-content: center;
     flex-direction: column;
     margin: auto;
+    width: 800px;
+    height: 600px;
    }
 
 
 /* this will appear after side is chosen     */
 #Reset {
-    display: none;
+    display: flex;
     justify-content: center;
     width: 200px;
     height: 90px;

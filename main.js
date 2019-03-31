@@ -3,12 +3,13 @@ $(() => {
     //variables declared/initialized 
     let totalSeconds = 0;
     let totalMinutes = 0;
-    let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo, timeout;
+    let interval, cardOne, cardTwo, selectedCardOne, selectedCardTwo, timeout, flipCardFront;
     let clickCount = 0;
     let countDown = 5;
     let flag = false;
     let cardsMatched = 0;
     let gameWon = false;
+
 
     //
     // $(`.flip-card-inner`).on(`click`, (e) => {
@@ -84,6 +85,9 @@ $(() => {
             ++clickCount;
         }
 
+        // let flipCardFront = e.currentTarget.firstElementChild;
+        // console.log(flipCardFront);
+
         //flag checks if game has started
         if (flag === true) {
 
@@ -101,7 +105,6 @@ $(() => {
                 cardTwo = e.currentTarget.children[1].firstElementChild.attributes[1].nodeValue;
                 //grab unique card id to compare double click for second card
                 selectedCardTwo = e.delegateTarget.offsetParent;
-
 
             }
             //checks cards for match, mismatch, or duplicate selection
@@ -143,7 +146,6 @@ $(() => {
     });
 
 
-
     // this is the function for the pop up & 
     // to decide either to be lightside or darkside
     // starts game
@@ -163,9 +165,6 @@ $(() => {
 
     //transition effect
     $('#dialog').fadeIn(3000);
-
-
-
 
     //if lightside button is clicked
     $('#lightside').click(function (e) {
@@ -196,8 +195,6 @@ $(() => {
         //enables reset button
         $(`#Reset`).attr("disabled", false);
     });
-
-
 
     //if darkside button is clicked
     $('#darkside').click(function (e) {
@@ -230,11 +227,10 @@ $(() => {
 
     });
 
-
-
     //reset game event listener
     $(`#Reset`).on(`click`, (e) => {
-        //pause timer
+        console.log(e);
+         //pause timer
         clearInterval(interval);
         //pause countdown
         clearInterval(timeout);
@@ -244,8 +240,6 @@ $(() => {
         cardsMatched = 0;
         //reset timer in dom
         domTimer();
-        //flip the cards again
-        flipCards($(`.flip-card`));
         //reset count down
         countDown = 5;
         //re=displays countdown in dom
@@ -261,9 +255,8 @@ $(() => {
         $('.light-container').css('display', 'none');
         //resets game won to false
         gameWon = false;
-
-
-
+        //flips already mached cards back
+        flipCards($(`.flip-card.active`));
 
     });
     //disableds reset button
@@ -273,10 +266,6 @@ $(() => {
     $(`.flip-card-inner`).on(`click`, (e) => {
         //compare cards on click
         compareCards(e);
-
-        //plays audio on click
-        // var audio = document.getElementById("audio");
-        // audio.play();
     });
 
 

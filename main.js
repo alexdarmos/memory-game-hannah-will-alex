@@ -122,7 +122,6 @@ $(() => {
 // this is the function for the pop up & 
 // to decide either to be lightside or darkside
 // starts game
-$(document).ready(() => {    
 
     var id = '#dialog';
 
@@ -184,7 +183,7 @@ $('#darkside').click(function (e) {
 
 	
 
-});
+
 
 
 

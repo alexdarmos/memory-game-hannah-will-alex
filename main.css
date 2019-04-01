@@ -31,7 +31,7 @@ body {
     flex-wrap: wrap;
     align-items:center;
     justify-content: center;
-    width: auto;
+    width: 500px;
     height: 50%;
 }
 
@@ -68,8 +68,8 @@ element with a lower stack order. This will go behind curser in desktop few*/
     flex-wrap: wrap;
     text-align: center;
     color:rgb(233, 191, 3);
-    font-size: 40px;
-    width: auto;
+    font-size: 30px;
+    width: 500px;
 }
 
 .light-dark {
@@ -136,6 +136,7 @@ element with a lower stack order. This will go behind curser in desktop few*/
     background-color: black;
     text-align: center; 
     width: auto;
+    margin: auto;
 }
 
 

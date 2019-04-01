@@ -1,38 +1,38 @@
 /* This is the smallest size for phones */
 * {
-    box-sizing: border-box;  
+  box-sizing: border-box;  
 }
 
 /* font-face imports the font faster */
 @font-face {
-    font-family: "Starjhol";
-    src: url(Starjhol.ttf) format("truetype");
+  font-family: "Starjhol";
+  src: url(Starjhol.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "Starjedi";
-    src: url(Starjedi.ttf) format("truetype");
+  font-family: "Starjedi";
+  src: url(Starjedi.ttf) format("truetype");
 }
 
 /* this was to fit background to entire screen and size accordingly */
 body {
-  width: 600px;
-  height: 100%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
+width: 100%;
+height: 100%;
+background-size: 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-image: url("https://wallpapermemory.com/uploads/807/star-wars-episode-4-iv-a-new-hope-background-hd-2560x1440-229600.jpg");
 }
 
 
 #popup {
-    display: flex;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content: center;
-    width: 500px;
-    height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: center;
+  width: 500px;
+  height: 50%;
 }
 
 
@@ -40,152 +40,152 @@ body {
 An element with greater stack order is always in front of an 
 element with a lower stack order. This will go behind curser in desktop few*/
 .window {
-    position:absolute;
-    display:none;
-    z-index:2;
-    padding:20px;
-    width: auto;
-    text-align: center;
+  position:absolute;
+  display:none;
+  z-index:2;
+  padding:20px;
+  width: auto;
+  text-align: center;
 }
 
 #dialog {
-    justify-content: center;
-    align-content: center;  
-    background-color:rgba(0, 0, 0, 0.842);
-    padding:10px;
+  justify-content: center;
+  align-content: center;  
+  background-color:rgba(0, 0, 0, 0.842);
+  padding:10px;
 }
 
 #header {
-    display: flex;
-    justify-content: center;
-    width: auto;
+  display: flex;
+  justify-content: center;
+  width: auto;
 
 }
 
 #path {
-    font-family: "Starjedi";
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    color:rgb(233, 191, 3);
-    font-size: 30px;
-    width: 500px;
+  font-family: "Starjedi";
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  color:rgb(233, 191, 3);
+  font-size: 30px;
+  width: 500px;
 }
 
 .light-dark {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* gifs for popup */
 #obi {
-    width: 150px;
-    height: 150px;
-    margin: 5px;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
 }
 
 #vader {
-    width: 150px;
-    height: 150px;
-    margin: 5px;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
 }
 
 /* buttons to decide */
 #lightside {
-    width: 130px;
-    height: 70px;
-    font-size: 20px;
-    margin: 5px;
-    background-color: black;
-    color: rgb(233, 191, 3);
-    font-family: "Starjedi";
-    text-align: center;
+  width: 130px;
+  height: 70px;
+  font-size: 20px;
+  margin: 5px;
+  background-color: black;
+  color: rgb(233, 191, 3);
+  font-family: "Starjedi";
+  text-align: center;
 }
 
 #darkside {
-    width: 130px;
-    height: 70px;
-    font-size: 20px;
-    margin: auto;
-    background-color: black;
-    color: rgb(233, 191, 3);
-    font-family: "Starjedi";
-    text-align: center;
+  width: 130px;
+  height: 70px;
+  font-size: 20px;
+  margin: auto;
+  background-color: black;
+  color: rgb(233, 191, 3);
+  font-family: "Starjedi";
+  text-align: center;
 }
 
 
 
 /* this is the parent container, display: flex set to help children containers */
 .main-container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    width: auto;
-    margin: 5px;  
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: auto;
+  margin: 5px;  
 }
 
 
 
 /* this is the main header */
 .name {
-    font-family: "Starjhol";
-    color: rgb(233, 191, 3);
-    font-size: 60px;
-    background-color: black;
-    text-align: center; 
-    width: auto;
-    margin: auto;
+  font-family: "Starjhol";
+  color: rgb(233, 191, 3);
+  font-size: 60px;
+  background-color: black;
+  text-align: center; 
+  width: auto;
+  margin: auto;
 }
 
 
 
 .timer {
-    color: white;
-    font-family: "Starjedi";
-    background-color: rgba(0, 0, 0, 0.6);
-    width: auto;
-    text-align: center;
-    font-size: 30px;
-    margin-top: 8px; 
+  color: white;
+  font-family: "Starjedi";
+  background-color: rgba(0, 0, 0, 0.6);
+  width: auto;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 8px; 
 }
 
 
 /* this is the new parent to flex the cards within */
 .light-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: auto;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: auto;
+  margin-top: 10px;
 }
 
 .dark-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: auto;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: auto;
+  margin-top: 10px;
 }
 
 
 /* this child class grabs all the cards to position to center per flex */
 .card {
-    align-content: center;
-    justify-content: center;
-    margin: 5px;
+  align-content: center;
+  justify-content: center;
+  margin: 5px;
 }
 
 
 /* this is the back of the card details*/
 h2 {
-    font-family: "Starjhol";
-    color: rgb(233, 191, 3);
-    background-color: black;
-    font-size: 25px;
-    text-align: center;
-    align-content: center;
+  font-family: "Starjhol";
+  color: rgb(233, 191, 3);
+  background-color: black;
+  font-size: 25px;
+  text-align: center;
+  align-content: center;
 }
 
 
@@ -193,20 +193,20 @@ h2 {
 object is away from the user (transformed) So, a lower value will 
 result in a more intensive 3D effect than a higher value. */
 .flip-card {
-    background-color: transparent;
-    width: 150px;
-    height: 150px;
-    perspective: 1000px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
 }
 
 
-  /* this sizes all the gifs */
+/* this sizes all the gifs */
 input {
-    width: 150px;
-    height: 150px;
-    margin: 3px;
+  width: 150px;
+  height: 150px;
+  margin: 3px;
 }
-  
+
 
 /* 
 The transition property is a shorthand property for:
@@ -220,23 +220,23 @@ elements are rendered in 3D space.
 This property must be used together 
 with the transform property. */
 .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-  
 
-  /* The transform property applies a 2D or 3D transformation 
+
+/* The transform property applies a 2D or 3D transformation 
 to an element. This property allows you to rotate, 
 scale, move, skew, etc., elements.
 Defines a 3D rotation along the Y-axis 
 .active triggers the event click in the js file */
 .flip-card.active .flip-card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /* The backface-visibility property defines whether 
@@ -246,115 +246,115 @@ is a mirror image of the front face being displayed.
 This property is useful when an element is rotated. 
 It lets you choose if the user should see the back face or not. */
 .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
-  
+
 .flip-card-front {
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
- 
+
 
 /* this is the same as flip-card inner, but this rotates the card back */
 .flip-card-back {
-    transform: rotateY(180deg);
-    width: 150px;
-    height: 150px;
+  transform: rotateY(180deg);
+  width: 150px;
+  height: 150px;
 }
 
 
 
 /* header for the ending */
 .winner {
-    color: rgb(233, 191, 3);
-    background-color: black;
-    font-family: "Starjedi";
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    margin: 40px;
-    padding: 10px;
-    font-size: 30px;
- }
+  color: rgb(233, 191, 3);
+  background-color: black;
+  font-family: "Starjedi";
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  margin: 40px;
+  padding: 10px;
+  font-size: 30px;
+}
 
 /* no video for mobile */
- video {
-     display: none;
- }
- 
+video {
+   display: none;
+}
+
 .end-video1 {
-    display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    margin: auto;
-    
-   }
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: auto;
+  
+ }
 
-   .end-video2 {
-    display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    margin: auto;
-    
+ .end-video2 {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: auto;
+  
 
-   }
+ }
 
 
 
 
 .Start-Reset {
-    display: none;
-    justify-content: center;
-    margin-top: 20px;
+  display: none;
+  justify-content: center;
+  margin-top: 20px;
 }
 
- 
+
 /* this will appear after side is chosen     */
 #Reset {
-    display: flex;
-    width: 180px;
-    height: 90px;
-    margin: 10px;
-    font-size: 25px;
-    text-align: center;
-    background-color: black;
-    color: rgb(233, 191, 3);
-    font-family: "Starjedi";
+  display: flex;
+  width: 180px;
+  height: 90px;
+  margin: 10px;
+  font-size: 25px;
+  text-align: center;
+  background-color: black;
+  color: rgb(233, 191, 3);
+  font-family: "Starjedi";
 }
 
 
 
 
 /* This size is for computer screens */
-  @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) {
 
 
-    /* positioned relative to its normal position. Needed to
-    add this to have cards flip */
+  /* positioned relative to its normal position. Needed to
+  add this to have cards flip */
 body {
-    position: relative;
-    width: 100%;
-    
+  position: relative;
+  width: 100%;
+  
 }
 
 
 #popup {
-    display: flex;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content: center;
-    width: 600px;
-    height: 600px;
-    z-index: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  z-index: inherit;
 }
 
 
@@ -362,191 +362,191 @@ body {
 An element with greater stack order is always in front of an 
 element with a lower stack order. This will go behind curser*/
 .window {
-    position:absolute;
-    left:0;
-    top:50;
-    display:none;
-    z-index:2;
-    padding:20px;
-    text-align: center;
+  position:absolute;
+  left:0;
+  top:50;
+  display:none;
+  z-index:2;
+  padding:20px;
+  text-align: center;
 }
 
 #dialog {
-    align-content: center;  
-    background-color:rgba(0, 0, 0, 0.842);
-    margin-top: 30px;
-    width:700px; 
-    height: 700px;
-    padding:10px;
+  align-content: center;  
+  background-color:rgba(0, 0, 0, 0.842);
+  margin-top: 30px;
+  width:700px; 
+  height: 700px;
+  padding:10px;
 }
 
 #header {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #path {
-    font-family: "Starjedi";
-    text-align: center;
-    color:rgb(233, 191, 3);
-    font-size: 50px;
+  font-family: "Starjedi";
+  text-align: center;
+  color:rgb(233, 191, 3);
+  font-size: 50px;
 }
 
 .light-dark {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #obi {
-    width: 200px;
-    height: 200px;
-    margin: 5px;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
 }
 
 #vader {
-    width: 200px;
-    height: 200px;
-    margin: 5px;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
 }
 
 
 #lightside {
-    width: 180px;
-    height: 90px;
-    margin: 10px;
-    font-size: 25px;
-    background-color: black;
-    color: rgb(233, 191, 3);
-    font-family: "Starjedi";
-    text-align: center;
+  width: 180px;
+  height: 90px;
+  margin: 10px;
+  font-size: 25px;
+  background-color: black;
+  color: rgb(233, 191, 3);
+  font-family: "Starjedi";
+  text-align: center;
 }
 
 #darkside {
 width: 180px;
-    height: 90px;
-    margin: 10px;
-    font-size: 25px;
-    background-color: black;
-    color: rgb(233, 191, 3);
-    font-family: "Starjedi";
-    text-align: center;
+  height: 90px;
+  margin: 10px;
+  font-size: 25px;
+  background-color: black;
+  color: rgb(233, 191, 3);
+  font-family: "Starjedi";
+  text-align: center;
 }
 
 
 /* added a fun curser and used getElementById / event listener
- mousemove to move along the Y and X axes*/
+mousemove to move along the Y and X axes*/
 #falcon {
-    background-image: url("falcon2.png");
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 450px;
-    height: 450px;
-    z-index: 3;
+  background-image: url("falcon2.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  z-index: 3;
 }
 
 .page-title {
-    background-color: black;
-    position: sticky;
+  background-color: black;
+  position: sticky;
 }
 
 .name {
-    background-color: black;
-    font-size: 65px;
-    padding-top: 10px;
-    padding-bottom:10px;
-    text-align: center;
+  background-color: black;
+  font-size: 65px;
+  padding-top: 10px;
+  padding-bottom:10px;
+  text-align: center;
 }
 
 .timer {
-    margin-top: 20px;
-    font-size: 30px; 
+  margin-top: 20px;
+  font-size: 30px; 
 }
 
 
 .light-container {
-    margin-top: 20px;
-    padding: 10px;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .dark-container {
-    margin-top: 20px;
-    padding: 10px;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 h2 {
-    font-size: 30px;
+  font-size: 30px;
 }
-    
+  
 .flip-card {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 input {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
-    
+  
 .flip-card-back {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
- .winner {
-    color: rgb(233, 191, 3);
-    background-color: black;
-    font-family: "Starjedi";
-    text-align: center;
-    justify-content: center;
-    margin: 10px;
-    padding: 20px;
-    font-size: 40px;
- }
+.winner {
+  color: rgb(233, 191, 3);
+  background-color: black;
+  font-family: "Starjedi";
+  text-align: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+  font-size: 40px;
+}
 
 /* displaying end video per light or dark */
 video {
-    display: flex;
+  display: flex;
 }
 
 .end-video1 {
-    display: none;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    margin: auto;
-    width: 800px;
-    height: 600px;
-    
-    
-   }
+  display: none;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 800px;
+  height: 600px;
+  
+  
+ }
 
-   .end-video2 {
-    display: none;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    margin: auto;
-    width: 800px;
-    height: 600px;
-   }
+ .end-video2 {
+  display: none;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 800px;
+  height: 600px;
+ }
 
 
 /* this will appear after side is chosen     */
 #Reset {
-    display: flex;
-    justify-content: center;
-    width: 200px;
-    height: 90px;
-    margin: 5px;
-    font-size: 25px;
-    background-color: black;
-    color: rgb(233, 191, 3);
-    font-family: "Starjedi";
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 90px;
+  margin: 5px;
+  font-size: 25px;
+  background-color: black;
+  color: rgb(233, 191, 3);
+  font-family: "Starjedi";
 }
 
- 
+
 
 
 }

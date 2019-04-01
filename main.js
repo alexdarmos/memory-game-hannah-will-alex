@@ -12,7 +12,7 @@ $(() => {
     let gameChoice = null;
 
 //this is called once user wins based on light or darkside choice
-//this will also show the video based on side - computer screen only
+//this will also show the video based on side
     function displayEndVideo() {
         if (gameChoice === 'lightside') {
             $('.end-video2').css('display', 'flex');
@@ -119,6 +119,39 @@ $(() => {
         if (selectedCardOne != selectedCardTwo) {   
             if (cardOne === cardTwo) {
             cardsMatched++;
+            //Replace gifs with chekcs on match - LightSide
+            if(cardOne === "yoda.gif"){
+                $(".yodagif").attr("src", "check.jpg");
+            }
+            if(cardOne === "hangif.gif"){
+                $(".hangif").attr("src", "check.jpg");
+            }
+            if(cardOne === "leia-gif.gif"){
+                $(".leiagif").attr("src", "check.jpg");
+            }
+            if(cardOne === "lightsaber.gif"){
+                $(".lightsabergif").attr("src", "check.jpg");
+            }
+            if(cardOne === "obi.gif") {
+                $(".obigif").attr("src", "check.jpg");
+            }
+            //Replace gifs with checks on match - Darkside
+            if(cardOne === "forseen.webp"){
+                $(".forseengif").attr("src", "check.jpg");
+            }
+            if(cardOne === "trooper.gif") {
+                $(".troopergif").attr("src", "check.jpg");
+            }
+            if(cardOne === "darthvader.gif"){
+                $(".vadergif").attr("src", "check.jpg");
+            }
+            if(cardOne === "force.gif"){
+                $(".forcegif").attr("src", "check.jpg");
+            }
+            if(cardOne === "starship.gif"){
+                $(".starshipgif").attr("src", "check.jpg");
+            }
+
     } else {
         //flips cards back to hidden after 1 second delay
         setTimeout(() => {
@@ -155,9 +188,11 @@ $(() => {
 
 
     
-    // this is the popup position to decide between light and dark 
-    //and fade in effect
-      var id = '#dialog';
+    // this is the function for the pop up & 
+    // to decide either to be lightside or darkside
+    // starts game
+
+        var id = '#dialog';
 
         //Get the window height and width
         var winH = $(window).height();
@@ -176,11 +211,9 @@ $(() => {
         
         
 
-    //if lightside button is clicked
-    // starts game
+        //if lightside button is clicked
     $('#lightside').click(function (e) {
         gameChoice = 'lightside';
-        //plays audio on click
         var audio = document.getElementById("audio");
         audio.play();
         $('#popup').css('display', 'none');   
@@ -211,11 +244,10 @@ $(() => {
 
 
     //if darkside button is clicked
-    // starts game
     $('#darkside').click(function (e) {
 
         gameChoice = 'darkside';
-        //plays audio on click
+        
         var audio2 = document.getElementById("audio2");
         audio2.play();
 
@@ -259,8 +291,22 @@ $(() => {
         cardsMatched = 0;
         //reset timer in dom
         domTimer();
-        //flip the cards again
-        flipCards($(`.flip-card`));
+
+         //flip the cards back
+         flipCards($(`.flip-card.active`));
+
+         //Reset gifs
+        $(".yodagif").attr("src", "yoda.gif");
+        $(".hangif").attr("src", "hangif.gif");
+        $(".leiagif").attr("src", "leia-gif.gif");
+        $(".lightsabergif").attr("src", "lightsaber.gif");
+        $(".obigif").attr("src", "obi.gif");
+        $(".forseengif").attr("src", "forseen.webp");
+        $(".troopergif").attr("src", "trooper.gif");
+        $(".vadergif").attr("src", "darthvader.gif");
+        $(".forcegif").attr("src", "force.gif");
+        $(".starshipgif").attr("src", "starship.gif");
+    
         //reset count down
         countDown = 5;
         //re=displays countdown in dom
@@ -277,7 +323,6 @@ $(() => {
         $('.end-video1').css('display', 'none');
         $('.end-video2').css('display', 'none');  
         $('.Start-Reset').css('display', 'none');
-
   
         //resets game won to false
         gameWon = false;
@@ -293,6 +338,10 @@ $(() => {
     $(`.flip-card-inner`).on(`click`, (e) => {
         //compare cards on click
         compareCards(e);
+
+        //plays audio on click
+        // var audio = document.getElementById("audio");
+        // audio.play();
     });
 
 

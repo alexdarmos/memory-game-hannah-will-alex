@@ -291,9 +291,22 @@ $(() => {
         cardsMatched = 0;
         //reset timer in dom
         domTimer();
-        //flip the cards again
-        flipCards($(`.flip-card`));
-        // flipCards($(`.flip-card.active`));
+
+         //flip the cards back
+         flipCards($(`.flip-card.active`));
+
+         //Reset gifs
+        $(".yodagif").attr("src", "yoda.gif");
+        $(".hangif").attr("src", "hangif.gif");
+        $(".leiagif").attr("src", "leia-gif.gif");
+        $(".lightsabergif").attr("src", "lightsaber.gif");
+        $(".obigif").attr("src", "obi.gif");
+        $(".forseengif").attr("src", "forseen.webp");
+        $(".troopergif").attr("src", "trooper.gif");
+        $(".vadergif").attr("src", "darthvader.gif");
+        $(".forcegif").attr("src", "force.gif");
+        $(".starshipgif").attr("src", "starship.gif");
+    
         //reset count down
         countDown = 5;
         //re=displays countdown in dom
@@ -310,7 +323,6 @@ $(() => {
         $('.end-video1').css('display', 'none');
         $('.end-video2').css('display', 'none');  
         $('.Start-Reset').css('display', 'none');
-
   
         //resets game won to false
         gameWon = false;

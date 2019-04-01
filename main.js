@@ -119,6 +119,10 @@ $(() => {
         if (selectedCardOne != selectedCardTwo) {   
             if (cardOne === cardTwo) {
             cardsMatched++;
+            if(cardOne === "file:///C:/Users/wtm49/OneDrive/Documents/GitHub/memory-game-hannah-will-alex/yoda.gif"){
+                $("#yodagif1").attr("src", "check.jpg");
+                $("#yodagif2").attr("src", "check.jpg"); 
+            }
     } else {
         //flips cards back to hidden after 1 second delay
         setTimeout(() => {
@@ -260,6 +264,7 @@ $(() => {
         domTimer();
         //flip the cards again
         flipCards($(`.flip-card`));
+        // flipCards($(`.flip-card.active`));
         //reset count down
         countDown = 5;
         //re=displays countdown in dom

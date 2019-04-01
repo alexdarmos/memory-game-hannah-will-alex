@@ -119,10 +119,39 @@ $(() => {
         if (selectedCardOne != selectedCardTwo) {   
             if (cardOne === cardTwo) {
             cardsMatched++;
-            if(cardOne === "file:///C:/Users/wtm49/OneDrive/Documents/GitHub/memory-game-hannah-will-alex/yoda.gif"){
-                $("#yodagif1").attr("src", "check.jpg");
-                $("#yodagif2").attr("src", "check.jpg"); 
+            //Replace gifs with chekcs on match - LightSide
+            if(cardOne === "yoda.gif"){
+                $(".yodagif").attr("src", "check.jpg");
             }
+            if(cardOne === "hangif.gif"){
+                $(".hangif").attr("src", "check.jpg");
+            }
+            if(cardOne === "leia-gif.gif"){
+                $(".leiagif").attr("src", "check.jpg");
+            }
+            if(cardOne === "lightsaber.gif"){
+                $(".lightsabergif").attr("src", "check.jpg");
+            }
+            if(cardOne === "obi.gif") {
+                $(".obigif").attr("src", "check.jpg");
+            }
+            //Replace gifs with checks on match - Darkside
+            if(cardOne === "forseen.webp"){
+                $(".forseengif").attr("src", "check.jpg");
+            }
+            if(cardOne === "trooper.gif") {
+                $(".troopergif").attr("src", "check.jpg");
+            }
+            if(cardOne === "darthvader.gif"){
+                $(".vadergif").attr("src", "check.jpg");
+            }
+            if(cardOne === "force.gif"){
+                $(".forcegif").attr("src", "check.jpg");
+            }
+            if(cardOne === "starship.gif"){
+                $(".starshipgif").attr("src", "check.jpg");
+            }
+
     } else {
         //flips cards back to hidden after 1 second delay
         setTimeout(() => {

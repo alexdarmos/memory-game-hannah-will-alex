@@ -16,7 +16,7 @@
 
 /* this was to fit background to entire screen and size accordingly */
 body {
-  width: 100%;
+  width: 600px;
   height: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -31,8 +31,8 @@ body {
     flex-wrap: wrap;
     align-items:center;
     justify-content: center;
-    width: 300px;
-    height: 300px;
+    width: auto;
+    height: 50%;
 }
 
 
@@ -44,10 +44,12 @@ element with a lower stack order. This will go behind curser in desktop few*/
     display:none;
     z-index:2;
     padding:20px;
+    width: auto;
     text-align: center;
 }
 
 #dialog {
+    justify-content: center;
     align-content: center;  
     background-color:rgba(0, 0, 0, 0.842);
     padding:10px;
@@ -56,6 +58,8 @@ element with a lower stack order. This will go behind curser in desktop few*/
 #header {
     display: flex;
     justify-content: center;
+    width: auto;
+
 }
 
 #path {
@@ -65,6 +69,7 @@ element with a lower stack order. This will go behind curser in desktop few*/
     text-align: center;
     color:rgb(233, 191, 3);
     font-size: 40px;
+    width: auto;
 }
 
 .light-dark {
@@ -117,18 +122,20 @@ element with a lower stack order. This will go behind curser in desktop few*/
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    width: auto;  
+    width: auto;
+    margin: 5px;  
 }
 
 
 
-/* this is the main header, positioned relative to page */
+/* this is the main header */
 .name {
     font-family: "Starjhol";
     color: rgb(233, 191, 3);
     font-size: 60px;
     background-color: black;
     text-align: center; 
+    width: auto;
 }
 
 
@@ -175,7 +182,7 @@ h2 {
     font-family: "Starjhol";
     color: rgb(233, 191, 3);
     background-color: black;
-    font-size: 18px;
+    font-size: 25px;
     text-align: center;
     align-content: center;
 }
@@ -186,16 +193,17 @@ object is away from the user (transformed) So, a lower value will
 result in a more intensive 3D effect than a higher value. */
 .flip-card {
     background-color: transparent;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     perspective: 1000px;
 }
 
 
   /* this sizes all the gifs */
 input {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
+    margin: 3px;
 }
   
 
@@ -254,8 +262,8 @@ It lets you choose if the user should see the back face or not. */
 /* this is the same as flip-card inner, but this rotates the card back */
 .flip-card-back {
     transform: rotateY(180deg);
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 
@@ -333,6 +341,7 @@ It lets you choose if the user should see the back face or not. */
     add this to have cards flip */
 body {
     position: relative;
+    width: 100%;
     
 }
 

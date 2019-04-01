@@ -12,7 +12,7 @@ $(() => {
     let gameChoice = null;
 
 //this is called once user wins based on light or darkside choice
-//this will also show the video based on side
+//this will also show the video based on side - computer screen only
     function displayEndVideo() {
         if (gameChoice === 'lightside') {
             $('.end-video2').css('display', 'flex');
@@ -155,11 +155,9 @@ $(() => {
 
 
     
-    // this is the function for the pop up & 
-    // to decide either to be lightside or darkside
-    // starts game
-
-        var id = '#dialog';
+    // this is the popup position to decide between light and dark 
+    //and fade in effect
+      var id = '#dialog';
 
         //Get the window height and width
         var winH = $(window).height();
@@ -178,9 +176,11 @@ $(() => {
         
         
 
-        //if lightside button is clicked
+    //if lightside button is clicked
+    // starts game
     $('#lightside').click(function (e) {
         gameChoice = 'lightside';
+        //plays audio on click
         var audio = document.getElementById("audio");
         audio.play();
         $('#popup').css('display', 'none');   
@@ -211,10 +211,11 @@ $(() => {
 
 
     //if darkside button is clicked
+    // starts game
     $('#darkside').click(function (e) {
 
         gameChoice = 'darkside';
-        
+        //plays audio on click
         var audio2 = document.getElementById("audio2");
         audio2.play();
 
@@ -292,10 +293,6 @@ $(() => {
     $(`.flip-card-inner`).on(`click`, (e) => {
         //compare cards on click
         compareCards(e);
-
-        //plays audio on click
-        // var audio = document.getElementById("audio");
-        // audio.play();
     });
 
 

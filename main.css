@@ -33,13 +33,12 @@ body {
     justify-content: center;
     width: 300px;
     height: 300px;
-    z-index: inherit;
 }
 
 
 /*The z-index property specifies the stack order of an element.
 An element with greater stack order is always in front of an 
-element with a lower stack order. This will go behind curser*/
+element with a lower stack order. This will go behind curser in desktop few*/
 .window {
     position:absolute;
     display:none;
@@ -51,11 +50,7 @@ element with a lower stack order. This will go behind curser*/
 #dialog {
     align-content: center;  
     background-color:rgba(0, 0, 0, 0.842);
-    margin-top: 10px;
-    width:300px; 
-    height: 300px;
     padding:10px;
-    margin: auto;
 }
 
 #header {
@@ -91,6 +86,7 @@ element with a lower stack order. This will go behind curser*/
     margin: 5px;
 }
 
+/* buttons to decide */
 #lightside {
     width: 130px;
     height: 70px;
@@ -128,7 +124,6 @@ element with a lower stack order. This will go behind curser*/
 
 /* this is the main header, positioned relative to page */
 .name {
-    position: relative;
     font-family: "Starjhol";
     color: rgb(233, 191, 3);
     font-size: 60px;
@@ -187,7 +182,7 @@ h2 {
 
 
 /* The perspective property defines how far the 
-object is away from the user. So, a lower value will 
+object is away from the user (transformed) So, a lower value will 
 result in a more intensive 3D effect than a higher value. */
 .flip-card {
     background-color: transparent;
@@ -254,7 +249,9 @@ It lets you choose if the user should see the back face or not. */
     align-items: center;
     justify-content: center;
 }
-  
+ 
+
+/* this is the same as flip-card inner, but this rotates the card back */
 .flip-card-back {
     transform: rotateY(180deg);
     width: 100px;
@@ -263,7 +260,7 @@ It lets you choose if the user should see the back face or not. */
 
 
 
-
+/* header for the ending */
 .winner {
     color: rgb(233, 191, 3);
     background-color: black;
@@ -498,6 +495,7 @@ input {
     font-size: 40px;
  }
 
+/* displaying end video per light or dark */
 video {
     display: flex;
 }
